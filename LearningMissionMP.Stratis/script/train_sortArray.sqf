@@ -1,4 +1,4 @@
-_time = 0.1;
+_time = 0.01;
 hint "start";
 sleep _time;
 
@@ -43,6 +43,7 @@ while {_i < _arrLength} do {
 	sleep _time;
 	_store = 0;
 	if (_arr select (_i-1) < _arr select _i) then {
+		
 		hint format["#%5 MAX%6 PUSH LEFT #%1 %3 with #%2 %4", (_i-1),_i, _arr select (_i-1), _arr select (_i), _loopCount, _max];
 		_store = _arr select (_i-1);
 		_arr set [(_i-1), _arr select _i];
