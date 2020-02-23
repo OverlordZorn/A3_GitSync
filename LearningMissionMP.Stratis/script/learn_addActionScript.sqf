@@ -23,4 +23,8 @@ hintC "and once more a normal hint";
 sleep 1;
 hint "Hint with a Linebrake.\nIsn't it great?";
 sleep 2;
-hint format ["Hello, i am using format to show your name!\nPlayer: %1\n This shows Side, SquadName,#inSQ and (Name)\nOnly Name: %2\nOnly Group: %3", player, name player, group player]; 
+hint format ["Hello, i am using format to show your name!\n
+			Player: %1\n 
+			This shows Side, SquadName,#inSQ and (Name)
+			\nOnly Name: %2
+			\nOnly Group: %3", player, name player, group player]; 
