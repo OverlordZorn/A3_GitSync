@@ -1,8 +1,14 @@
 fnc_timeMashine = {
 	/* Possible Parameters: 
-	1. _desiredTime 		- number, same format as daytime (0-24) 	- default = 0 => will jump to next SunRise or SunSet
-	2. _desiredVariation 	- number, 1 = 1 hour 						- default = 1 => Targettime will be within 30min before or after _desiredTime.
-	3. _cooldown 			- number, in minutes						- default = 1 => avoids being initiated instantly again.
+	1. _desiredTime
+		- number, same format as daytime (0-24)
+		- default = 0 => will jump to next SunRise or SunSet
+	2. _desiredVariation
+		- number, 1 = 1 hour
+		- default = 1 => Targettime will be within 30min before or after _desiredTime.
+	3. _cooldown 			
+		- number, in minutes
+		- default = 1 => avoids being initiated instantly again.
 	*/
 
 
@@ -16,8 +22,8 @@ fnc_timeMashine = {
 
 
 	//debug
-	hintC format["%1,%2,%3",_desiredTime,_desiredVariation,_cooldown];
-	sleep 0.1;
+	//hintC format["%1,%2,%3",_desiredTime,_desiredVariation,_cooldown];
+	//sleep 0.1;
 
 	// config
 	_durationPerHour = 10; 	// how many seconds should 1 Hour take
@@ -25,7 +31,7 @@ fnc_timeMashine = {
 
 	_strEnd = "It is time to go";
 
-	// limits the steps per second to the minimum Framerate
+	// limits the steps per second to the  Framerate
 	if (floor diag_fps<_sps) then {_sps = floor diag_fps};
 
 
