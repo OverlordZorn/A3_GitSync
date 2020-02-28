@@ -38,6 +38,24 @@ fnc_sumOfAll = {
 };
 
 
+fnc_timeString = {
+private _daytime = daytime;
+private _hours = floor _daytime;
+private _minutes = floor ((_daytime -_hours)*60);
+private _seconds = floor ((((_daytime - _hours)*60)- _minutes) *60);
+
+private _strH = if (_hours<10) then{format["0%1",_hours];} else {format["%1",_hours];};
+private _strM = if (_minutes<10) then{format["0%1",_minutes];} else {format["%1",_minutes];};
+private _strS = if (_seconds<10) then{format["0%1",_seconds];} else {format["%1",_seconds];};
+
+private _timeString = format["%1:%2:%3",_strH,_strM,_strS];
+
+_timeString;
+
+};
+
 
 hint "functions added";
 sleep 1;
+ 
+

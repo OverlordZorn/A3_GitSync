@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=130;
+		nextID=136;
 	};
 	class LayerIndexProvider
 	{
-		nextID=38;
+		nextID=46;
 	};
 	class Camera
 	{
-		pos[]={1905.0861,9.3262491,5802.4473};
-		dir[]={0.67132008,-0.37903422,0.63705677};
-		up[]={0.27498117,0.92533749,0.26094359};
-		aside[]={0.68841833,1.3966928e-006,-0.72544175};
+		pos[]={1888.6631,16.564726,5800.4912};
+		dir[]={0.94842917,-0.30893549,0.071038626};
+		up[]={0.30807501,0.95108056,0.023075081};
+		aside[]={0.074692026,-1.4199759e-007,-0.99720782};
 	};
 };
 binarizationWanted=0;
@@ -42,13 +42,14 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Structures_F_Heli_Items_Electronics",
 	"A3_Props_F_Enoch_Military_Equipment",
-	"A3_Props_F_Exp_Military_Camps"
+	"A3_Props_F_Exp_Military_Camps",
+	"A3_Structures_F_EPC_Items_Electronics"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -144,6 +145,13 @@ class AddonsMetaData
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -422,7 +430,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=27;
+		items=32;
 		class Item0
 		{
 			dataType="Group";
@@ -1857,6 +1865,88 @@ class Mission
 			};
 			id=129;
 			type="Land_GamingSet_01_controller_F";
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1915.8596,6.5530071,5801.7329};
+				angles[]={0,4.6470737,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=130;
+			type="Land_Laptop_device_F";
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1915.7533,5.9538884,5801.0552};
+				angles[]={0,4.8292189,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=131;
+			type="Land_PortableDesk_01_black_F";
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1915.5959,6.5532169,5800.3462};
+				angles[]={0,5.1349683,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addAction [""Run TimeMashine V1"", ""fnc\fnc_timeMashineV1.sqf""];" \n "this addAction ["" ""];" \n "this addAction [""Run TimeMashine Test"", ""fnc\fnc_timeMashineTest.sqf""];" \n "" \n "this addAction ["" ""];" \n "" \n "this addAction [""Run TimeMashine Basic"", ""fnc\fnc_timeMashineBasic.sqf""];" \n "this addAction [""Run TimeMashine Smooth"", ""fnc\fnc_timeMashineSmooth.sqf""];";
+			};
+			id=132;
+			type="Land_Laptop_device_F";
+			atlOffset=0.00020980835;
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1920.0343,6.2266355,5801.9678};
+				angles[]={0.0024897563,4.8267174,6.2806959};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=134;
+			type="Land_Device_assembled_F";
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1919.7141,6.2334876,5799.2612};
+				angles[]={0.0024897563,4.8267174,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=135;
+			type="Land_Device_assembled_F";
 		};
 	};
 };
