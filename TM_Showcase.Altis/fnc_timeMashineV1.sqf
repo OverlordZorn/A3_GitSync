@@ -31,8 +31,9 @@ fnc_timeMashine = {
 
 	_strEnd = "It is time to go";
 
+	_frameLimiter = 2;
 	// limits the steps per second to the  Framerate
-	if (floor diag_fps<_sps) then {_sps = floor diag_fps};
+	if ((floor diag_fpsMin/2)<_sps) then {_sps = floor diag_fpsMin/2};
 
 
 
