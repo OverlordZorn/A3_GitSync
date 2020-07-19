@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=46;
+		nextID=50;
 	};
 	class Camera
 	{
-		pos[]={1888.6631,16.564726,5800.4912};
-		dir[]={0.94842917,-0.30893549,0.071038626};
-		up[]={0.30807501,0.95108056,0.023075081};
-		aside[]={0.074692026,-1.4199759e-007,-0.99720782};
+		pos[]={1848.0391,33.144501,5759.7852};
+		dir[]={0.73564643,-0.38028327,0.56062591};
+		up[]={0.30248138,0.92485452,0.23051614};
+		aside[]={0.60615933,3.2094249e-007,-0.7953952};
 	};
 };
 binarizationWanted=0;
@@ -29,8 +29,10 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Signs_F_Signs_Ad",
 	"A3_Air_F_Heli_Light_01",
+	"ace_realisticnames",
 	"A3_Soft_F_MRAP_01",
 	"A3_Props_F_Argo_Items_Electronics",
+	"cba_xeh",
 	"A3_Props_F_Enoch_Military_Camps",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Soft_F_Quadbike_01",
@@ -40,6 +42,7 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Structures_F_Wrecks",
 	"A3_Weapons_F_Ammoboxes",
+	"ace_cargo",
 	"A3_Structures_F_Heli_Items_Electronics",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Props_F_Exp_Military_Camps",
@@ -49,7 +52,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=15;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -136,19 +139,26 @@ class AddonsMetaData
 		};
 		class Item12
 		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item13
+		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
@@ -410,23 +420,21 @@ class Mission
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0;
-		startFog=0.28248924;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=1;
-		forecastFog=0.30000001;
+		forecastWeather=0;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
 		year=2035;
 		month=7;
 		day=6;
-		hour=5;
-		minute=28;
-		startFogBase=0.00036621094;
-		forecastFogBase=5;
-		startFogDecay=0.1;
-		forecastFogDecay=0.1;
+		hour=18;
+		minute=21;
+		startFogBase=-1000;
+		forecastFogBase=-1000;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Entities
 	{
@@ -510,7 +518,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression="_this setGroupID [_value];";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
 					class Value
 					{
 						class data
@@ -1910,7 +1918,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction [""Run TimeMashine V1"", ""fnc\fnc_timeMashineV1.sqf""];" \n "this addAction ["" ""];" \n "this addAction [""Run TimeMashine Test"", ""fnc\fnc_timeMashineTest.sqf""];" \n "" \n "this addAction ["" ""];" \n "" \n "this addAction [""Run TimeMashine Basic"", ""fnc\fnc_timeMashineBasic.sqf""];" \n "this addAction [""Run TimeMashine Smooth"", ""fnc\fnc_timeMashineSmooth.sqf""];";
+				init="call{this addAction [""Run TimeMashine V1"", ""fnc\fnc_timeMashineV1.sqf""];" \n "this addAction ["" ""];" \n "this addAction [""Run TimeMashine Test"", ""fnc\fnc_timeMashineTest.sqf""];" \n "" \n "this addAction ["" ""];" \n "" \n "this addAction [""Run TimeMashine Basic"", ""fnc\fnc_timeMashineBasic.sqf""];" \n "this addAction [""Run TimeMashine Smooth"", ""fnc\fnc_timeMashineSmooth.sqf""];}";
 			};
 			id=132;
 			type="Land_Laptop_device_F";
