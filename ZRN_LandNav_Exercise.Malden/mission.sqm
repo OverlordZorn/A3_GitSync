@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=1025;
 	class ItemIDProvider
 	{
 		nextID=1003;
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4361.7642,128.9539,2785.623};
-		dir[]={0.72696012,-0.36214969,-0.58361322};
-		up[]={0.28250206,0.93206024,-0.22679594};
-		aside[]={-0.62610072,1.3305689e-006,-0.77989298};
+		pos[]={4375.3809,161.46725,2709.1216};
+		dir[]={0.05161114,-0.38749856,0.92055398};
+		up[]={0.021698561,0.92180127,0.38701797};
+		aside[]={0.99855715,7.5770186e-007,-0.055978369};
 	};
 };
 binarizationWanted=0;
@@ -491,13 +491,13 @@ class Mission
 	{
 		briefingName="An Expedition with Compass and Map";
 		resistanceEast=1;
-		timeOfChanges=3600;
+		timeOfChanges=28800;
 		startWeather=0;
-		startFog=0.081378534;
+		startFog=0.26310393;
 		startWind=1;
 		startWaves=0.1;
 		forecastWeather=0;
-		forecastFog=0.56047302;
+		forecastFog=0.15021379;
 		forecastWind=1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
@@ -506,12 +506,12 @@ class Mission
 		year=2035;
 		month=6;
 		day=9;
-		hour=4;
+		hour=22;
 		minute=0;
 		startFogBase=65.877686;
-		forecastFogBase=10.809326;
+		forecastFogBase=70;
 		startFogDecay=0.05769933;
-		forecastFogDecay=0.057699319;
+		forecastFogDecay=0.1;
 		class CustomAttributes
 		{
 			name="Intel";
@@ -2583,7 +2583,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Polaris Two Cross";
-			state=1;
 			class Entities
 			{
 				items=3;
@@ -2598,6 +2597,8 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this addAction [""Start TimeMashine"",""script\TM.sqf"",nil,3];}";
+						name="tmTower";
 						disableSimulation=1;
 					};
 					id=26;
@@ -2641,7 +2642,7 @@ class Mission
 					};
 					id=28;
 					type="Land_BellTower_01_V1_F";
-					atlOffset=-3.654007;
+					atlOffset=-3.6539993;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7601,7 +7602,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_1";
 						isPlayer=1;
 						isPlayable=1;
@@ -7709,7 +7710,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1";
 						isPlayable=1;
 						class Inventory
@@ -7816,7 +7817,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_14";
 						isPlayable=1;
 						class Inventory
@@ -7924,7 +7925,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_15";
 						isPlayable=1;
 						class Inventory
@@ -8031,7 +8032,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_13";
 						isPlayable=1;
 						class Inventory
@@ -8138,7 +8139,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_12";
 						isPlayable=1;
 						class Inventory
@@ -8245,7 +8246,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_11";
 						isPlayable=1;
 						class Inventory
@@ -8352,7 +8353,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_10";
 						isPlayable=1;
 						class Inventory
@@ -8460,7 +8461,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_7";
 						isPlayable=1;
 						class Inventory
@@ -8567,7 +8568,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_6";
 						isPlayable=1;
 						class Inventory
@@ -8674,7 +8675,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_9";
 						isPlayable=1;
 						class Inventory
@@ -8781,7 +8782,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_8";
 						isPlayable=1;
 						class Inventory
@@ -8888,7 +8889,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_5";
 						isPlayable=1;
 						class Inventory
@@ -8996,7 +8997,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_4";
 						isPlayable=1;
 						class Inventory
@@ -9103,7 +9104,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_3";
 						isPlayable=1;
 						class Inventory
@@ -9210,7 +9211,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this setVariable [""Role"",""Instructor""];}";
+						init="call{this setVariable [""Role"",""Student""];}";
 						name="p1_2";
 						isPlayable=1;
 						class Inventory
@@ -9309,7 +9310,6 @@ class Mission
 			};
 			class Attributes
 			{
-				init="call{this setVariable [""Role"",""Student""];}";
 			};
 			id=633;
 			class CustomAttributes
@@ -13315,14 +13315,19 @@ class Mission
 		class Item116
 		{
 			dataType="Trigger";
-			position[]={4377.8105,121.89843,2773.4438};
+			position[]={4369.0127,121.89844,2780.8911};
+			angle=1.3256125;
 			class Attributes
 			{
-				sizeA=250;
-				sizeB=250;
+				condition="call{this}";
+				onDeactivation="call{[] spawn ""script\TM.sqf"";}";
+				sizeA=93.566322;
+				sizeB=112.35656;
+				activationBy="CIV";
 			};
 			id=1000;
 			type="EmptyDetectorAreaR250";
+			atlOffset=0.34043884;
 		};
 		class Item117
 		{

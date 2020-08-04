@@ -1,10 +1,18 @@
 if (!tmUsed) then {
+	
+	tmUsed = true;
+	publicVariable "tmUsed";
 
-setTimeMultiplier 120;
+	removeAllActions tmTower;
 
-waitUntil {sleep 1;(daytime >= 4) && !(daytime > 20);};
+	setTimeMultiplier 120;
 
-setTimeMultiplier 0.1;
+	sleep 10;
 
-tmUsed = true; publicVariable "tmUsed";
+	waitUntil {
+	((daytime >= 3.75) && !(daytime > 20));
+		}; 
+
+	setTimeMultiplier 1; 
+	
 };
