@@ -3,4 +3,4 @@
 _nul = [] execVM "script\phones.sqf";
 _nul = [] execVM "script\init_heal.sqf";
 
-player spawn {sleep 10; [_this] execVM "script\Intro.sqf"};
+player spawn {sleep 5; [_this] execVM "script\Intro.sqf"};
