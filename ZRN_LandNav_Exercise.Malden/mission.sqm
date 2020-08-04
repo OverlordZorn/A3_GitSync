@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4316.9565,171.83168,2773.6511};
-		dir[]={0.60456377,-0.74514276,-0.28183734};
-		up[]={0.67538273,0.6668725,-0.31485248};
-		aside[]={-0.42256078,-9.4738789e-007,-0.90643549};
+		pos[]={4361.7642,128.9539,2785.623};
+		dir[]={0.72696012,-0.36214969,-0.58361322};
+		up[]={0.28250206,0.93206024,-0.22679594};
+		aside[]={-0.62610072,1.3305689e-006,-0.77989298};
 	};
 };
 binarizationWanted=0;
@@ -7601,7 +7601,9 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_1";
+						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{
@@ -7707,6 +7709,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1";
 						isPlayable=1;
 						class Inventory
@@ -7813,6 +7816,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_14";
 						isPlayable=1;
 						class Inventory
@@ -7920,6 +7924,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_15";
 						isPlayable=1;
 						class Inventory
@@ -8026,6 +8031,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_13";
 						isPlayable=1;
 						class Inventory
@@ -8132,6 +8138,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_12";
 						isPlayable=1;
 						class Inventory
@@ -8238,6 +8245,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_11";
 						isPlayable=1;
 						class Inventory
@@ -8344,6 +8352,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_10";
 						isPlayable=1;
 						class Inventory
@@ -8451,6 +8460,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_7";
 						isPlayable=1;
 						class Inventory
@@ -8557,6 +8567,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_6";
 						isPlayable=1;
 						class Inventory
@@ -8663,6 +8674,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_9";
 						isPlayable=1;
 						class Inventory
@@ -8769,6 +8781,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_8";
 						isPlayable=1;
 						class Inventory
@@ -8875,6 +8888,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_5";
 						isPlayable=1;
 						class Inventory
@@ -8982,6 +8996,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_4";
 						isPlayable=1;
 						class Inventory
@@ -9088,6 +9103,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_3";
 						isPlayable=1;
 						class Inventory
@@ -9194,6 +9210,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						name="p1_2";
 						isPlayable=1;
 						class Inventory
@@ -9292,7 +9309,7 @@ class Mission
 			};
 			class Attributes
 			{
-				init="call{[textStudent, ""Welcome to Land Nav"", false, ""Continue""] spawn BIS_fnc_guiMessage;}";
+				init="call{this setVariable [""Role"",""Student""];}";
 			};
 			id=633;
 			class CustomAttributes
@@ -9331,8 +9348,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4360.7529,120.87669,2760.4871};
-						angles[]={0,3.3775613,0};
+						position[]={4371.9126,121.72987,2778.8799};
+						angles[]={0,0.88291842,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -9340,8 +9357,8 @@ class Mission
 					{
 						health=0.35991517;
 						ammo=0.36551437;
-						init="call{[""test"", ""Welcome to Land Nav"", false, ""Continue""] spawn BIS_fnc_guiMessage;}";
-						isPlayer=1;
+						init="call{this setVariable [""Role"",""Instructor""];}";
+						isPlayable=1;
 						class Inventory
 						{
 							class uniform
@@ -9397,14 +9414,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4358.2632,120.75301,2761.7471};
-						angles[]={0,3.3775613,0};
+						position[]={4373.1396,121.82436,2776.3738};
+						angles[]={0,0.88291842,0};
 					};
 					side="Civilian";
 					flags=5;
 					class Attributes
 					{
-						init="call{[textInstructor, ""Welcome to Land Nav"", false, ""Continue""] spawn BIS_fnc_guiMessage;}";
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						isPlayable=1;
 						class Inventory
 						{
@@ -9432,7 +9449,6 @@ class Mission
 					};
 					id=884;
 					type="C_Marshal_F";
-					atlOffset=7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9462,14 +9478,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4359.3672,120.79287,2760.9089};
-						angles[]={0,3.3775613,0};
+						position[]={4372.7642,121.78686,2777.708};
+						angles[]={0,0.88291842,0};
 					};
 					side="Civilian";
 					flags=5;
 					class Attributes
 					{
-						init="call{[textInstructor, ""Welcome to Land Nav"", false, ""Continue""] spawn BIS_fnc_guiMessage;}";
+						init="call{this setVariable [""Role"",""Instructor""];}";
 						isPlayable=1;
 						class Inventory
 						{
