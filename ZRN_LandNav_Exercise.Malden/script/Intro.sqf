@@ -21,13 +21,11 @@ It is highly recommended to have the following documentation at hand to help you
  Once you are ready, go to the first Phone Booth and start your journey...</t>";
 
 
-
-
 _playerRole = (_this#0) getVariable ["Role", "false"];
 
-if (_playerRole == "Student") then {
+if (_playerRole === "Student") then {
 	[textStudent, "Welcome to Land Nav", false, "Continue"] spawn BIS_fnc_guiMessage;
 }
-if (_playerRole == "Instructor") then {
+if (_playerRole === "Instructor") then {
 	[textInstructor, "Welcome to Land Nav", false, "Continue"] spawn BIS_fnc_guiMessage;
 };
