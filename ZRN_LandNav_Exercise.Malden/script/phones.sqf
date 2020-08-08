@@ -78,23 +78,30 @@ text_bino = composeText [
 phone_bino addAction ["Investigate the Phone", { [text_bino, "You find a sticky note", false, "Ah Yes!"] call BIS_fnc_guiMessage },nil,1.5,true,true,"","",2,false,"",""];
 
 text_next = composeText [
-    "START CENTER BARN", lineBreak,
+    "START CENTER STABLE", lineBreak,
     "ABSOLUTE  40° 2000 METERS", lineBreak,
     "RELATIVE -90° 3540 METERS", lineBreak,
     "ABSOLUTE 180° 2000 METERS", lineBreak,
-    "ABSOLUTE 129° 2740mm METERS"
+    "ABSOLUTE 129° 2740 METERS"
     ];
 phone_next addAction ["Insert Coins", {[text_next, "You hear a recorded message", false, "What?"] call BIS_fnc_guiMessage },nil,1.5,true,true,"","",2,false,"",""];
 
 text_micro = composeText [
     "My Friend, very soon we will meet, but I have to make sure, no one is following you.", lineBreak,
-    "In the little green trashcan behind you, you can find a MicroDAGR GPS, its the latest shit, can give position up to a meter!", lineBreak,
+    "In the box next to the green trashcan behind you, you can find a MicroDAGR GPS, its the latest shit, can give position up to a meter!", lineBreak,
     "Even with the Map tools you can only get down to 10 meters", lineBreak, linebreak,
+
     "I hid a little cache for your efforts at the end, but be percise!", lineBreak,
-    "After you found the cache, come to the market in Dourdan where we might finally meet", lineBreak,
+    "After you found the cache, come to Dourdan, at the Main StreetCrossing, there is a Bus Station.",lineBreak,"You will be awaited", lineBreak, lineBreak,
+
     "But first, go to the next phone", lineBreak, lineBreak,
+    
     "07109e - 08969n + 00105MSL", lineBreak, lineBreak,
-    "Open your MicroDAGR and click on the Time at the Top to get to the Menu. Next you Set up your Waypoint. First you enter the longitute and latitute together, next is just a name, dont worry about it. Then SetWP", lineBreak,
+    
+    "Open your MicroDAGR and click on the Time at the Top to get to the Menu, then click on MARK to make a new waypoint.", lineBreak, lineBreak, 
+    
+    "1: Enter the grid coordinates long and lat togehter, like this: 0710908969", lineBreak, 
+    "The next Window is just a name, dont worry about it. Then SetWP", lineBreak,
     "The Mediean Sea Level I give to you, so you can make sure you are exactly at the right spot"
     ];
 phone_micro addAction ["Insert Coins", { [text_micro, "Phone Call", false, "Nice"] call BIS_fnc_guiMessage },nil,1.5,true,true,"","",2,false,"",""];
@@ -139,6 +146,12 @@ text_police = composeText [
     "You fool! I told you to be careful and percise....! Go back to the garage and check on top of the roof! Now quickly go before they get suspicous!"
     ];
 phone_police addAction ["Insert Coins", {[ text_police, "PhoneCall with the stranger", false, "Let's see..."] call BIS_fnc_guiMessage },nil,1.5,true,true,"","",2,false,"",""];
+
+
+text_end = composeText [
+    "You've made it!", lineBreak, lineBreak, "Finally you meet the stranger from the bar.", lineBreak, lineBreak, " He says his name is Petros.", lineBreak, lineBreak, 
+    "You are now a part of the rebellion"];
+phone_end addAction ["You Reached the End!", {[ text_end, "Finished!", false, "Hurrah"] call BIS_fnc_guiMessage },nil,1.5,true,true,"","",2,false,"",""];
 
 
 // FailSafes
