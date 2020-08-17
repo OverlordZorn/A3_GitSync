@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=171;
+		nextID=177;
 	};
 	class Camera
 	{
-		pos[]={4440.0181,321.25919,2473.041};
-		dir[]={-0.11580721,-0.37974504,0.91794586};
-		up[]={-0.04754832,0.92501456,0.37689358};
-		aside[]={0.99225712,3.4854747e-007,0.12518778};
+		pos[]={3128.8145,335.42188,6809.2935};
+		dir[]={0.56851637,-0.20744321,-0.79612374};
+		up[]={0.12056912,0.97823912,-0.16883942};
+		aside[]={-0.8138265,-6.8941154e-007,-0.58115542};
 	};
 };
 binarizationWanted=0;
@@ -5321,6 +5321,7 @@ class Mission
 			};
 			id=793;
 			type="rhs_3Ya40_1_single";
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5360,6 +5361,7 @@ class Mission
 			};
 			id=794;
 			type="rhs_3Ya40_1_single";
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13162,7 +13164,7 @@ class Mission
 			};
 			id=989;
 			type="Land_SurvivalRadio_F";
-			atlOffset=0.049499512;
+			atlOffset=0.049530029;
 		};
 		class Item111
 		{

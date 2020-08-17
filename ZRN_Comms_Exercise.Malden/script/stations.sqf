@@ -18,12 +18,12 @@ text_0 = composeText [
 
     "Be careful! The terrain might disrupt your communication with HQ, if that is the case, relocate to a better position!", lineBreak, lineBreak,
 
-    "Locations:", lineBreak,
-    "Station 1 - 047 break 098" , lineBreak,
-    "Station 2 - 059 break 107" , lineBreak,
-    "Station 3 - 085 break 768" , lineBreak,
-    "Station 4 - 080 break 065" , lineBreak,
-    "Station 5 - 068 break 027", lineBreak, lineBreak,
+    "Stations:", lineBreak,
+    "Station 1 - Radio Check" , lineBreak,
+    "Station 2 - Contact Report" , lineBreak,
+    "Station 3 - SITREP" , lineBreak,
+    "Station 4 - MEDEVAC" , lineBreak,
+    "Station 5 - IDF SUPPORT", lineBreak, lineBreak,
 
     "Once you completed all stations return to Arudy", lineBreak, lineBreak,
 
