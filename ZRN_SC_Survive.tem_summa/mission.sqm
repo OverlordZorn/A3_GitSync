@@ -5,17 +5,17 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=137;
+	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=166;
+		nextID=167;
 	};
 	class Camera
 	{
-		pos[]={5307.9766,17.726967,943.06305};
-		dir[]={-0.5533396,-0.81168079,0.18740724};
-		up[]={-0.76876444,0.58415467,0.26036799};
-		aside[]={0.32081071,-1.7519342e-006,0.94723028};
+		pos[]={5334.1626,9.8348503,961.23138};
+		dir[]={-0.63168746,-0.38845569,-0.67089921};
+		up[]={-0.26629272,0.92146766,-0.282823};
+		aside[]={-0.72807759,-1.8748688e-007,0.68552548};
 	};
 };
 binarizationWanted=0;
@@ -263,7 +263,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=52;
+		items=53;
 		class Item0
 		{
 			dataType="Object";
@@ -4499,12 +4499,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5300.3169,0.76610136,939.72296};
+						position[]={5323.9072,1.9651114,944.97101};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						name="unit1";
 						placementRadius=5;
 						description="Pilot";
 						isPlayable=1;
@@ -4790,7 +4791,7 @@ class Mission
 					};
 					id=131;
 					type="UK3CB_CW_US_B_LATE_HELI_PILOT";
-					atlOffset=0.1657373;
+					atlOffset=0.16573732;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4877,7 +4878,7 @@ class Mission
 			{
 			};
 			id=130;
-			atlOffset=0.1657373;
+			atlOffset=0.16573732;
 		};
 		class Item48
 		{
@@ -4898,6 +4899,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						name="unit2";
 						description="Recruit";
 						isPlayable=1;
 						class Inventory
@@ -5051,7 +5053,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5307.9609,1.1434191,942.53912};
+						position[]={5325.5796,0.8388617,931.78577};
 					};
 					side="Civilian";
 					flags=7;
@@ -5061,14 +5063,14 @@ class Mission
 					};
 					id=138;
 					type="C_man_w_worker_F";
-					atlOffset=7.0333481e-006;
+					atlOffset=-2.3424625e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=137;
-			atlOffset=7.0333481e-006;
+			atlOffset=-2.3424625e-005;
 		};
 		class Item50
 		{
@@ -5248,6 +5250,18 @@ class Mission
 			};
 			id=161;
 			atlOffset=-1.1444092e-005;
+		};
+		class Item52
+		{
+			dataType="Trigger";
+			position[]={5324.1284,2.0842931,950.75354};
+			class Attributes
+			{
+				sizeA=0;
+				sizeB=0;
+			};
+			id=166;
+			type="EmptyDetector";
 		};
 	};
 };
