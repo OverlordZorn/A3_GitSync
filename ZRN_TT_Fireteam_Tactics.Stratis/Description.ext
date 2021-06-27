@@ -1,6 +1,6 @@
 author = "Dr. Zorn";
 onLoadName ="TT: Fireteam Tactics";
-onLoadMission = "Everything the Fireteam Lead and his Team needs to know. How to React to Contact, Bounding, Formations and more.";
+onLoadMission = "Everything the Fireteam Lead and his Team needs to know.";
 
 briefingName = "ZRN TT 2-23 FTT";
 
