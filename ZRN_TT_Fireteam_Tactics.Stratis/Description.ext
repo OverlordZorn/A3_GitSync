@@ -1,0 +1,12 @@
+author = "Dr. Zorn";
+onLoadName ="TT: Fireteam Tactics";
+onLoadMission = "Everything the Fireteam Lead and his Team needs to know. How to React to Contact, Bounding, Formations and more.";
+
+briefingName = "ZRN TT 2-23 FTT";
+
+respawn = 3;
+respawnDelay = 15;
+
+briefing = 0;
+
+disabledAI = 1;

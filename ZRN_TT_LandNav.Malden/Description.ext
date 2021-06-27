@@ -1,11 +1,11 @@
-author = "Mr. Zorn";
+author = "Dr. Zorn";
 onLoadName ="Land Navigation Excercise";
 onLoadMission = "A group of everyday people decides to seak the path to glory";
 
 briefingName = "ZRN 2-19 TRAIN Land Navigation";
 
-resapwn = 3;
-respawnDelay = 42;
+respawn = 3;
+respawnDelay = 15;
 
 briefing = 0;
 

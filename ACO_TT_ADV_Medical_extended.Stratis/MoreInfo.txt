@@ -1,0 +1,7 @@
+The mods you need to test this out are CBA_A3 and ACE3.
+
+Updated for ACE medical 3.13
+
+Change settings in CBA settings to the settings you or your community like.
+
+All the best.
