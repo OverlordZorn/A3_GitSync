@@ -1,0 +1,1 @@
+player setVariable ["TAG_LoadoutStart", getUnitLoadout player];

@@ -1,12 +1,20 @@
+class Header
+{
+	gameType =  Support;	// Game type
+	minPlayers =  2;		// minimum number of players the mission supports
+	maxPlayers = 18;		// maximum number of players the mission supports
+}
+
+
+
 author="Callum";
 OnLoadName = "Tactical Training: Sniper";
 OnLoadMission = "Made by Callum";
 
+briefingName = "TT 2-18 Tactical Training: Sniper";
+
 respawn = 3;
-respawnButton = 1;
-respawndelay = 5;
-respawnOnStart = -1;
-respawnTemplates[] = {"MenuPosition"};
+
 
 corpseManagerMode = 1; //Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable
 corpseLimit = 7; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately.
