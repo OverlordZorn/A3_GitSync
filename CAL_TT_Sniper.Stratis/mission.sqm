@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1;
+		nextID=2;
 	};
 	class Camera
 	{
@@ -311,25 +311,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -361,6 +342,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -3915,7 +3915,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6081.3584,22.511536,5604.0718};
-				angles[]={-0,0,6.2820935};
+				angles[]={0,0,6.2820935};
 			};
 			side="Empty";
 			flags=4;
@@ -3931,7 +3931,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6082.0742,22.510717,5605.2495};
-				angles[]={-0,0,6.2820935};
+				angles[]={0,0,6.2820935};
 			};
 			side="Empty";
 			flags=4;
@@ -3947,7 +3947,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6080.5166,22.512501,5603.0581};
-				angles[]={-0,0,6.2820935};
+				angles[]={0,0,6.2820935};
 			};
 			side="Empty";
 			flags=4;
@@ -4004,6 +4004,7 @@ class Mission
 			};
 			id=101;
 			type="Land_Balloon_01_water_F";
+			atlOffset=0.013534546;
 		};
 		class Item47
 		{

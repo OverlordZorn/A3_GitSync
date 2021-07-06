@@ -1,8 +1,17 @@
-author = "Dr. Zorn";
-onLoadName ="Land Navigation Excercise";
-onLoadMission = "A group of everyday people decides to seak the path to glory";
+class Header
+{
+	gameType =  Support;	// Game type
+	minPlayers =  2;		// minimum number of players the mission supports
+	maxPlayers = 19;		// maximum number of players the mission supports
+}
 
-briefingName = "ZRN 2-19 TRAIN Land Navigation";
+
+
+author = "Dr. Zorn";
+onLoadName ="Tactical Training: Land Navigation";
+onLoadMission = "Bring a couple of Coins, you will need them";
+
+briefingName = "ZRN TT 2-19 Land Navigation";
 
 respawn = 3;
 respawnDelay = 15;
@@ -10,3 +19,9 @@ respawnDelay = 15;
 briefing = 0;
 
 disabledAI = 1;
+
+
+corpseManagerMode = 1; //Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable
+corpseLimit = 7; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately.
+corpseRemovalMinTime = 60; //Minimal time in seconds a body stays in the scene (can't be removed sooner).
+corpseRemovalMaxTime = 120; //Maximal time in seconds after which a dead body is removed (can't stay longer)
