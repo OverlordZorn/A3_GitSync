@@ -1,6 +1,6 @@
 author = "Dr. Zorn";
 onLoadName ="TT: Fireteam Tactics";
-onLoadMission = "Everything the Fireteam Lead and his Team needs to know.";
+onLoadMission = "TT: Fireteam Tactics";
 
 briefingName = "ZRN TT 2-23 FTT";
 
@@ -10,3 +10,10 @@ respawnDelay = 15;
 briefing = 0;
 
 disabledAI = 1;
+
+class Header
+{
+	gameType =  Support;	// Game type
+	minPlayers =  5;	// minimum number of players the mission supports
+	maxPlayers = 23;	// maximum number of players the mission supports
+};
