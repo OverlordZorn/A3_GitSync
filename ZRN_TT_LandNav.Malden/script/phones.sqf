@@ -16,7 +16,7 @@ phone_start addAction ["Pick Up Ringing Phone", {[text_start, "Phone Call", fals
 text_compass = composeText [
     "Hello my friend", lineBreak,lineBreak,
     "Now, go inside this room, there is a Box with a Compass, take it and look out of the window next to the door by the carpet!", lineBreak, lineBreak,
-    "There's a yellow building with a silo. Take the bearing of it in Mils and add 27 Mils to it.", lineBreak, lineBreak,
+    "There's a yellow building with a silo. Take the bearing of it in Mils and add 2700 Mils to it.", lineBreak, lineBreak,
     "Then go in that direction. The light will show you your path!", lineBreak, lineBreak,
     "There's another phone!"
 ];
