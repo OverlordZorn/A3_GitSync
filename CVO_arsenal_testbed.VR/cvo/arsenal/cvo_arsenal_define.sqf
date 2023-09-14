@@ -36,8 +36,7 @@ and append the individual Groups to CVO_A_BASE
 ##################
 
 Traits like "Medic" or "Engineer" are automatically detected,
-meaning manually giving a player the medic or doctor trait
-
+meaning manually giving a player the medic or doctor trait isnt necessary.
 
 ##################
 3. Personal KIT - Add Items to individual players based on their UID(steam64)
