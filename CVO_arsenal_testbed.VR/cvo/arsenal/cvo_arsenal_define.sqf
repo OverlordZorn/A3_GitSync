@@ -148,7 +148,7 @@ CVO_A_BASE append [
 	"AUR_Rappel_Gear"];
 
 // Radios
-CVO_A_BASE append = ["ACRE_BF888S"];
+CVO_A_BASE append  ["ACRE_BF888S"];
 
 // ###### Wearables ###### 
 
@@ -206,7 +206,7 @@ CVO_A_BASE append [
 // ###### WEAPONS - MAIN ###### 
 
 // Rifles
-CVO_A_BASE append = [
+CVO_A_BASE append  [
 	// Shotgun
 	"gm_hk512_ris_wud",
 	"gm_hk512_wud",
@@ -287,7 +287,7 @@ CVO_A_BASE append [
 	"gm_1Rnd_265mm_flare_single_grn_gc"];
 
 // Handgrenades and Throwables
-CVO_A_BASE append =  [
+CVO_A_BASE append   [
 	"gm_handgrenade_conc_dm51a1",
 	"gm_handgrenade_conc_dm51",
 
