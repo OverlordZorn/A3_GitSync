@@ -411,7 +411,7 @@ CVO_A_HASH_RoleKit = createHashMapFromArray [
 
 
 CVO_A_HASH_PlayerKit = createHashMapFromArray [
-	["_SP_PLAYER_", 		["Editor Debug", 	["ACE_Banana"],{}]],	
-	["76561197970306509", 	["Zorn", 			[	"gm_pl_headgear_beret_blu",	"gm_ge_headgear_beret_un", "G_Spectacles_Tinted", "G_Balaclava_blk", "H_Beret_blk"],	{}]],
-	["76561198147307775", 	["Clone", 			[	"gm_pl_headgear_beret_blu",	"gm_ge_headgear_beret_un"],	{}]] 	
+	["_SP_PLAYER_", 		["Editor Debug", 	["ACE_Banana"],		{systemChat "this is a test"; 	["ACE_Banana"]}		]	],	
+	["76561197970306509", 	["Zorn", 			[	"gm_pl_headgear_beret_blu",	"gm_ge_headgear_beret_un", "G_Spectacles_Tinted", "G_Balaclava_blk", "H_Beret_blk"],	{[]}	]],
+	["76561198147307775", 	["Clone", 			[	"gm_pl_headgear_beret_blu",	"gm_ge_headgear_beret_un"],	{[]}	]] 	
 ];
