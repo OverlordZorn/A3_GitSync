@@ -187,8 +187,6 @@ class Mission
 			class Attributes
 			{
 				name="cvo_arsenal";
-				createAsSimpleObject=1;
-				disableSimulation=1;
 			};
 			id=3;
 			type="Land_Metal_rack_F";
@@ -224,18 +222,6 @@ class Mission
 									class data
 									{
 										singleType="ARRAY";
-										class value
-										{
-											items=1;
-											class Item0
-											{
-												class data
-												{
-													singleType="STRING";
-													value="ACE_Banana";
-												};
-											};
-										};
 									};
 								};
 								class Item1

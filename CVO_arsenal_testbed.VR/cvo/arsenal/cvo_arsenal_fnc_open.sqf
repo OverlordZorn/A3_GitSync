@@ -6,7 +6,10 @@ it creates the cvo_virtual_arsenal box and updates the content of said arsenal.
 If the player opened it before and the cvo_virtual_arsenal exists already, it will 
 */
 
-if (	(player getVariable ["cvo_arsenal", false]) isEqualTo false) then {
+if (isNull cvo_virtual_arsenal) then { cvo_virtual_arsenal = ni;};
+
+if (isNil "cvo_virtual_arsenal") then {
+	systemChat "isNil/isNull check";
 
 // Creates Virtual Arsenal box for the player locally if none has been existing before
 
@@ -18,10 +21,16 @@ if (	(player getVariable ["cvo_arsenal", false]) isEqualTo false) then {
 	[cvo_virtual_arsenal, false] 				call ace_dragging_fnc_setCarryable;			// Disables Carrying
 	[cvo_virtual_arsenal, -1] 					call ace_cargo_fnc_setSize;					// Disables Ace Cargo Loading
 	cvo_virtual_arsenal setVariable ["ace_cargo_noRename", true];							// Disables Ace Cargo Renaming
-	cvo_virtual_arsenal enableSimulation false;												// Disables Simulation
+
 //	hideObject cvo_vitual_arsena;															// Hides the Object
 
-	player setVariable ["cvo_arsenal", cvo_virtual_arsenal, false];
+	clearBackpackCargo cvo_virtual_arsenal;													// Empties the ArsenalBox
+	clearMagazineCargo cvo_virtual_arsenal;
+	clearWeaponCargo cvo_virtual_arsenal;
+	clearItemCargo cvo_virtual_arsenal;
+
+	cvo_virtual_arsenal enableSimulation false;												// Disables Simulation
+
 
 	[cvo_virtual_arsenal, false, false] call ace_arsenal_fnc_initBox;
 
