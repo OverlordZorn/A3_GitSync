@@ -397,7 +397,10 @@ CVO_A_HASH_RoleKit = createHashMapFromArray [
 		"gm_ge_bgs_vest_type18_blk",
 		"gm_ge_headgear_psh77_up_oli",				"gm_ge_headgear_psh77_down_oli"], 
 		{}]],
-	["Officer", [[	"H_Beret_blk",	"gm_ge_headgear_beret_blk"	],	{}	]]; 
+	["Officer", [
+		["H_Beret_blk",	"gm_ge_headgear_beret_blk"],
+		{}	
+	]] 
 ];
 
 // #####################################################
