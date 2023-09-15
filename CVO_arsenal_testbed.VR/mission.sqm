@@ -8,14 +8,14 @@ class EditorData
 	toggles=1545;
 	class ItemIDProvider
 	{
-		nextID=6;
+		nextID=7;
 	};
 	class Camera
 	{
-		pos[]={4875.3672,8.6695614,321.58374};
-		dir[]={-0.6406194,-0.50739753,-0.57632846};
-		up[]={-0.37721264,0.8617121,-0.33935651};
-		aside[]={-0.66881788,-1.4901161e-008,0.74342626};
+		pos[]={5.362679,14.834468,2.7111549};
+		dir[]={-0.81009066,-0.50654578,-0.29523638};
+		up[]={-0.47592413,0.86221308,-0.17344986};
+		aside[]={-0.34241694,0,0.93954813};
 	};
 };
 binarizationWanted=0;
@@ -25,13 +25,14 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"ace_cargo",
 	"A3_Structures_F_Furniture",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Misc_F_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Weapons_F";
@@ -57,6 +58,13 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -90,13 +98,13 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4867.583,5.8924227,314.30099};
+				position[]={-8.991827,5.8924227,-5.719851};
 			};
 			side="Empty";
 			flags=4;
@@ -171,7 +179,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4868.7139,5.9000001,317.94699};
+				position[]={-8.3000002,5.9000001,-3.2479999};
 				angles[]={0,2.3531227,0};
 			};
 			side="Empty";
@@ -179,6 +187,7 @@ class Mission
 			class Attributes
 			{
 				name="cvo_arsenal";
+				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
 			id=3;
@@ -250,7 +259,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -269,7 +278,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4872,5.0014391,315.2616};
+						position[]={-2.0120959,5.0014391,-4.9796729};
+						angles[]={0,4.2084808,0};
 					};
 					side="West";
 					flags=7;
@@ -279,12 +289,83 @@ class Mission
 					};
 					id=5;
 					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=2;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=2;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male05ENG";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=4;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=4;
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-15.99774,6.6176624,-16.01745};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=6;
+			type="Sign_Arrow_Blue_F";
+			atlOffset=1.2444019;
 		};
 	};
 };
