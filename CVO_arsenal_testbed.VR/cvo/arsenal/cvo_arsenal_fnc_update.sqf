@@ -11,10 +11,9 @@
 
 	Examples:
 		<example>
-		[] call CVO_FNC_A_update;
+		[] call cvo_A_fnc_update;
 */
 if (!hasInterface) exitWith {};
-if (count CVO_arsenal_boxes isEqualTo 0) exitWith {};
 
 private _finalKit = [];
 _finalKit append CVO_A_BASE;
@@ -64,7 +63,8 @@ if (!(_array isEqualTo false)) then {
 	diag_log format ["PlayerKit Detected for %1 - Array: %2 - Code: %3",_array select 0, _array select 1, _code];
 }; 
 
-
+// Removes Duplicates
+_finalkit = _finalkit arrayIntersect _finalkit;
 
 // Return
 _finalkit
