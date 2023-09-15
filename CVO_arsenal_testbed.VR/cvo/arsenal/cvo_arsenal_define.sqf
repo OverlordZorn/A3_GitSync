@@ -59,7 +59,6 @@ PLAYER KIT gets updated each time the arsenal opens as it CAN be dependend on ot
 
 
 if (!hasInterface) exitWith {};
-if (count CVO_arsenal_boxes isEqualTo 0) exitWith {};
 
 // #####################################################
 // ###### DEFINE ARSENAL BOXES HERE - objects that give accesss to the CVO Arsenal
