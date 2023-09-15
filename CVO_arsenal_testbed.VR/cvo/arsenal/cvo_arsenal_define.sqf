@@ -17,7 +17,6 @@
 *=================================================*
 
 Here, you define the Available Equipment for the CVO Arsenal
-
 It is seperated in 3 Parts
 
 ##################
@@ -342,17 +341,51 @@ CVO_A_BASE append [
 		"gm_ge_bgs_vest_type18_blk",
 		"gm_ge_bgs_vest_type3a1_gry"];
 
-// Lategame Equipment
+
+CVO_A_BASE append [		// M16A1 Kit
+
+	"gm_20Rnd_556x45mm_B_M855_stanag_gry",		//20r Mags
+	"gm_20Rnd_556x45mm_B_M193_stanag_gry",
+	"gm_20Rnd_556x45mm_B_T_M856_stanag_gry",
+	"gm_20Rnd_556x45mm_B_T_M196_stanag_gry",
+
+//	"gm_30Rnd_556x45mm_B_T_M196_stanag_gry",	//30r Mags
+//	"gm_30Rnd_556x45mm_B_T_M856_stanag_gry",
+//	"gm_30Rnd_556x45mm_B_M193_stanag_gry",
+//	"gm_30Rnd_556x45mm_B_M855_stanag_gry",
+	
+
+//	"gm_colt4x20_ar15_blk",						// Scope
+
+//	"gm_suppressor_atec150_556mm_blk",			// Suppressor
+
+	"gm_m16a1_blk"
+];
+
+
+
+// Lategame Uniforms and Wear
 /*
 CVO_A_BASE append [
+
 	"eou_gorka_1",
+
 	"U_O_R_Gorka_01_black_F",
+
 	"U_B_GEN_Commander_F",
+
 	"gm_ge_uniform_pilot_commando_rolled_blk",
 	"gm_ge_uniform_pilot_commando_blk",
 	"gm_ge_uniform_pilot_commando_rolled_gry",
-	"gm_ge_uniform_pilot_commando_gry"];
+	"gm_ge_uniform_pilot_commando_gry"
+
+	"gm_ge_facewear_stormhood_dustglasses_blk",
+	"gm_ge_facewear_stormhood_blk"	
+	];
 */
+
+
+
 
 
 // #####################################################
