@@ -4,6 +4,16 @@ if (_object isEqualTo objNull) exitWith {};
 private _pos = getPos _object;
 private _radius = boundingBoxReal cursorObject # 2 * 0.4;
 
+private _distance = player distance _pos;
+;
+
+enableCamShake true; 
+[{
+    addCamShake [10, 7, 25];
+}, [], 0.01 + _distance / 6900] call CBA_fnc_waitAndExecute;
+
+private _hmoVarName = [_pos] call ZRN_fnc_bigBoomLight;
+
 _code = {
     params ["_object","_pos","_radius"];
     _pos set [2, _pos#2 + (_radius*0.75) ];
@@ -14,19 +24,19 @@ _code = {
     _particleSource setParticleCircle [(_radius*0.5),[0,0,5]];
     _particleSource setDropInterval 0.01;
 
-    _hmoVarName = [_pos] call ZRN_fnc_bigBoomLight;
+    
     
     // Cleanup
     [{
-        deleteVehicle _this#0;
-        deleteVehicle _this#1;
+        deleteVehicle (_this#0);
+        deleteVehicle (_this#1);
 
         _hmo = missionNamespace getVariable [_this#2, "404"];
         if (_hmo isEqualTo "404") exitWith {};
         _hmo set ["isActive", false];
     } , [_particleSoruce,_lightSource, _hmoVarName],  60 * ( 10 )] call CBA_fnc_waitAndExecute;
 };
-[_code,[_object,_pos,_radius], 1] call CBA_fnc_waitAndExecute;
+[_code,[_object,_pos,_radius,_hmoVarName], 1] call CBA_fnc_waitAndExecute;
 
 
 _code = {

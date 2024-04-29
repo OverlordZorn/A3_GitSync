@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4643.9463,153.99185,4673.0298};
-		dir[]={-0.545304,-0.41509044,0.72839379};
-		up[]={-0.24878502,0.90975422,0.33231428};
-		aside[]={0.80061102,7.7090226e-007,0.59936303};
+		pos[]={4510.1943,129.27451,4860.6328};
+		dir[]={-0.005896532,-0.51721585,-0.85588104};
+		up[]={-0.0035631293,0.85584897,-0.51721531};
+		aside[]={-1.0000176,-6.7013252e-007,0.00688738};
 	};
 };
 binarizationWanted=0;
@@ -25,14 +25,13 @@ addons[]=
 	"A3_Structures_F_Ind_DieselPowerPlant",
 	"A3_Weapons_F_Explosives",
 	"A3_Modules_F_Curator_Mines",
-	"A3_Characters_F_Enoch",
-	"A3_Misc_F_Helpers"
+	"A3_Characters_F_Enoch"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=4;
 		class Item0
 		{
 			className="A3_Structures_F_Ind";
@@ -58,13 +57,6 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item4
-		{
-			className="A3_Misc_F";
-			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -132,8 +124,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					singleType="STRING";
-					value="[[""light_emitter_2""]]";
+					nil=1;
+					singleType="ANY";
 				};
 			};
 		};
@@ -146,7 +138,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[[2,[""emitterNr"",2,""position"",[4499.62,4821.4,0.739609],""positionOffSet"",[4505.62,4832,0],""params"",[[0.906929,0.058929,0],[0.800208,0.217568,0.0156638],5e+006,true,16,100,true,[0,0,0,0],false,[],[]],""class"","""",""trigger"",-1,""group"",[48],""consAttach"",[],""consAttachAttribute"",[],""consAttachGlobal"",[],""connectionsThisTrigger"",[],""thisIsHNEGAttEmitter"",[],""dieout"",0,""thisIsHNEGLight"",true,""attachedTo"",-1,""selection"","""",""selpos"",[],""preset"","""",""allowHideShow"",false,""enableForZeus"",true,""onlyZeus"","""",""thisIsHNEGSound"",false,""type"",""#lightpoint"",""isIR"",false,""dirAngles"",[30,60,1],""dirShape"",[""<none>"",[1,1,1]],""rotation"",[[0,1,0],[0,0,1]],""allowhideshow"",false,""terobj"",[]]]]";
+					value="[]";
 				};
 			};
 		};
@@ -158,8 +150,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					singleType="SCALAR";
-					value=0;
+					nil=1;
+					singleType="ANY";
 				};
 			};
 		};
@@ -210,8 +202,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					singleType="SCALAR";
-					value=1;
+					nil=1;
+					singleType="ANY";
 				};
 			};
 		};
@@ -236,8 +228,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					singleType="SCALAR";
-					value=1.025;
+					nil=1;
+					singleType="ANY";
 				};
 			};
 		};
@@ -249,8 +241,8 @@ class CustomAttributes
 			{
 				class data
 				{
-					singleType="SCALAR";
-					value=36;
+					nil=1;
+					singleType="ANY";
 				};
 			};
 		};
@@ -263,7 +255,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="STRING";
-					value="[<null>,<null>,48,<null>,<null>]";
+					value="[]";
 				};
 			};
 		};
@@ -288,14 +280,14 @@ class Mission
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=1;
+		startWeather=0.1061217;
 		startWind=0.1;
-		startRain=0.69693905;
+		startRain=0.49718651;
 		startWaves=0.1;
-		forecastWeather=1;
+		forecastWeather=0.1595767;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastRain=0.57033503;
+		forecastRain=0.49999982;
 		forecastLightnings=0.1;
 		rainForced=1;
 		wavesForced=1;
@@ -303,14 +295,14 @@ class Mission
 		year=2035;
 		day=28;
 		hour=3;
-		minute=19;
+		minute=20;
 		startFogBase=171.53552;
 		startFogDecay=0;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=14;
+		items=13;
 		class Item0
 		{
 			dataType="Object";
@@ -1429,66 +1421,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4499.6187,112.15346,4821.395};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="light_emitter_2";
-			};
-			id=48;
-			type="Helper_Base_F";
-			atlOffset=0.73960876;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="if (isServer) then {_this setVariable ['HNEG_emed_thisData', [[4499.62,4821.4,0.739609],[[0.906929,0.058929,0],[0.765596,0.217568,0.0156638],5e+006,true,16,100,true,[0,0,0,0],false,[],[]],-1,[],0,"""",[],false,""#lightpoint"",[[0,1,0],[0,0,1]]], true];_this setVariable [""thisIsHNEGLight"",true,true];_this setVariable [""HNEG_emed_allowHideShow"",false,true];_this setVariable [""HNEG_emed_enableForZeus"",true,true];_this setVariable [""HNEG_emed_onlyZeus"","""",true];_this setVariable [""HNEG_emed_thisGrp"",-1,true];_this setVariable [""HNEG_emed_thisGrpNames"",[""light_emitter_2""],true];_this setVariable [""HNEG_emed_curatorData"",[true,true],true];			if (isNil 'HNEG_fnc_setEmtrParams_inline') then {				HNEG_fnc_setEmtrParams_inline = {" \n "params[""_emtr"", ""_params""];" \n "if (!isNull _emtr) then {" \n "switch (typeOf _emtr) do {" \n "case ""#particlesource"": {" \n "_emtr setParticleParams (_params # 0);" \n "_emtr setParticleRandom (_params # 1);" \n "_emtr setParticleCircle (_params # 2);" \n "_emtr setParticleFire (_params # 3);" \n "_emtr setDropInterval (_params # 4);" \n "};" \n "case ""#lightpoint"": {" \n "_emtr setLightColor (_params # 0);" \n "_emtr setLightAmbient (_params # 1);" \n "_emtr setLightIntensity (_params # 2);" \n "_emtr setLightUseFlare (_params # 3);" \n "_emtr setLightFlareSize (_params # 4);" \n "_emtr setLightFlareMaxDistance (_params # 5);" \n "_emtr setLightDayLight (_params # 6);" \n "if (count (_params # 7) > 0) then {" \n "_emtr setLightAttenuation (_params # 7);" \n "};" \n "_emtr setLightIR (_params # 8);" \n "};" \n "case ""#lightreflector"": {" \n "_emtr setLightColor (_params # 0);" \n "_emtr setLightAmbient (_params # 1);" \n "_emtr setLightIntensity (_params # 2);" \n "_emtr setLightUseFlare (_params # 3);" \n "_emtr setLightFlareSize (_params # 4);" \n "_emtr setLightFlareMaxDistance (_params # 5);" \n "_emtr setLightDayLight (_params # 6);" \n "if (count (_params # 7) > 0) then {" \n "_emtr setLightAttenuation (_params # 7);" \n "};" \n "_emtr setLightIR (_params # 8);" \n "if (count _params >= 10 && {count (_params # 9) > 0}) then {" \n "_emtr setLightConePars (_params # 9);" \n "};" \n "if (count _params >= 11 && {count (_params # 10) > 0}) then {" \n "_emtr setLightVolumeShape (_params # 10);" \n "};" \n "};" \n "case ""#dynamicsound"": {" \n "if (count _params == 7) then {" \n "playSound3D [" \n "_params # 0, " \n "_params # 1, " \n "_params # 2, " \n "_params # 3, " \n "_params # 4, " \n "_params # 5, " \n "_params # 6 " \n "];" \n "};" \n "};" \n "};" \n "};" \n "};				publicVariable 'HNEG_fnc_setEmtrParams_inline';				if (count ((_this getVariable ['HNEG_emed_curatorData', [false, false, '[]']]) # 2) > 2 && {(_this getVariable ['HNEG_emed_curatorData', [false, false, '[]']]) # 0}) then {					HNEG_fnc_allEmitterSetsCurator_inline = {" \n "private _pointers = call HNEG_fnc_allEmittersCurator_inline;" \n "if (_this isEqualType []) then {" \n "_pointers = _this;" \n "};" \n "private _grpNrs = _pointers apply {_x getVariable ""HNEG_emed_thisGrp""};" \n "private _ret = [[], []];" \n "" \n "_grpNrs apply {" \n "private _nr = _x;" \n "(_ret # 0) pushBackUnique ([_pointers, {_x getVariable ""HNEG_emed_thisGrp"" isEqualTo _nr}] call BIS_fnc_conditionalSelect);" \n "(_ret # 1) pushBackUnique (([_pointers, {_x getVariable ""HNEG_emed_thisGrp"" isEqualTo _nr}] call BIS_fnc_conditionalSelect) apply {_x getVariable ""HNEG_emed_thisEmtr""});" \n "};" \n "" \n "_ret" \n "};					publicVariable 'HNEG_fnc_allEmitterSetsCurator_inline';					HNEG_fnc_getEmitterSetCurator_inline = {" \n "" \n "" \n "private _pointers = allMissionObjects ""Helper_Base_F"" select {							_x getVariable [""thisIsHNEGEmitter"", false] || {_x getVariable [""thisIsHNEGAttEmitter"", false]} || {_x getVariable [""thisIsHNEGLight"", false]};					   };" \n "private _emtr = _this param[0, """", ["""", objNull]];" \n "if (_emtr isEqualType """") then {" \n "if (count _emtr > 0) then {" \n "_emtr = _emtr call HNEG_fnc_findEmitterCurator_inline;" \n "} else {" \n "_emtr = objNull;" \n "};" \n "};" \n "private _pointer = (_pointers select {_x getVariable [""HNEG_emed_thisEmtr"", objNull] isEqualTo _emtr}) # 0;" \n "" \n "if (!(isNil ""_pointer"")  && {(_pointer getVariable [""HNEG_emed_thisGrp"", -1]) > -1}) exitWith {" \n "[" \n "_pointers select {(_x getVariable [""HNEG_emed_thisGrp"", -1]) > -1 && { (_x getVariable [""HNEG_emed_thisGrp"", -1]) == _pointer getVariable [""HNEG_emed_thisGrp"", -1] } }," \n "_pointers select {(_x getVariable [""HNEG_emed_thisGrp"", -1]) > -1 && { (_x getVariable [""HNEG_emed_thisGrp"", -1]) == _pointer getVariable [""HNEG_emed_thisGrp"", -1] } } apply {" \n "_x getVariable [""HNEG_emed_thisEmtr"", objNull];" \n "}" \n "]" \n "};" \n "" \n "[[], []]" \n "};					publicVariable 'HNEG_fnc_getEmitterSetCurator_inline';					HNEG_fnc_allEmittersCurator_inline = {" \n "allMissionObjects ""Helper_Base_F"" select {" \n "_x getVariable [""thisIsHNEGEmitter"", false] || {_x getVariable [""thisIsHNEGAttEmitter"", false]} || {_x getVariable [""thisIsHNEGLight"", false]};" \n "}" \n "};					publicVariable 'HNEG_fnc_allEmittersCurator_inline';					HNEG_fnc_curatorObjectEdited_inline = {" \n "if (typeOf _this == ""Helper_Base_F"") then {" \n "((vehicleVarName _this) call HNEG_fnc_getEmitterSetCurator_inline) params[""_ptrs"", ""_emtrs""];" \n "_emtrs apply {" \n "if (surfaceIsWater getPosWorld _x) then {" \n "_x setPosASL (getPosASL _this);" \n "} else {" \n "_x setPos (getPos _this);" \n "};" \n "};" \n "private _head = _ptrs # 0;" \n "{" \n "if (!(_x isEqualTo _this)) then {" \n "if (surfaceIsWater getPosWorld _this) then {" \n "_x setPosASL (getPosASL _this);" \n "} else {" \n "_x setPos (getPos _this);" \n "};" \n "};" \n "} forEach _ptrs;" \n "} else {" \n "if (count (_this getVariable [""HNEG_emed_thisPointers"", []]) > 0) then {" \n "if (surfaceIsWater getPosWorld _this) then {" \n "_this setPosASL (getPosASL _this);" \n "} else {" \n "_this setPos (getPos _this);" \n "};" \n "};" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorObjectEdited_inline';					HNEG_fnc_curatorObjectDeleted_inline = {" \n "" \n "if (typeOf _this == ""Helper_Base_F"" && {_this getVariable [""HNEG_emed_thisIsHNEGEmitter"", false] || _this getVariable [""HNEG_emed_thisIsHNEGAttEmitter"", false] || _this getVariable [""HNEG_emed_thisIsHNEGLight"", false] || _this getVariable [""HNEG_emed_thisIsHNEGSound"", false]}) then {" \n "((vehicleVarName _this) call HNEG_fnc_getEmitterSetCurator_inline) apply {" \n "if (!isNull ((_x # 0) getVariable [""HNEG_emed_thisParent"", objNull]) && {count (((_x # 0) getVariable [""HNEG_emed_thisParent"", objNull]) getVariable [""HNEG_emed_thisEmitters"", []]) > 0}) then {" \n "((_x # 0) getVariable [""HNEG_emed_thisParent"", objNull]) setVariable [""HNEG_emed_thisEmitters"", nil, true];" \n "};" \n "_x apply {deleteVehicle _x};" \n "};" \n "};" \n "" \n "if (count (_this getVariable [""HNEG_emed_thisPointers"", []]) > 0) then {" \n "(_this getVariable [""HNEG_emed_thisPointers"", []]) apply {" \n "deleteVehicle ((_x getVariable [""HNEG_emed_thisEmitters"", [objNull, []]]) # 0);" \n "deleteVehicle _x;" \n "};" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorObjectDeleted_inline';					HNEG_fnc_curatorObjectSelectionChanged_inline = {" \n "if (typeOf _this == ""Helper_Base_F"" && {_this getVariable [""HNEG_emed_thisIsHNEGEmitter"", false] || {_this getVariable [""HNEG_emed_thisIsHNEGAttEmitter"", false]} || {_this getVariable [""HNEG_emed_thisIsHNEGLight"", false] || _this getVariable [""HNEG_emed_thisIsHNEGSound"", false]}}) then {" \n "_this setVariable [""HNEG_emed_thisOrigPos"", if (surfaceIsWater (getPosWorld _this)) then {getPosASL _this} else {getPos _this}, true];" \n "};" \n "if (count (_this getVariable [""HNEG_emed_thisPointers"", []]) > 0) then {" \n "(_this getVariable [""HNEG_emed_thisPointers"", []]) apply {" \n "_x setVariable [""HNEG_emed_thisOrigPos"", if (surfaceIsWater (getPosWorld _this)) then {getPosASL _this} else {getPos _this}, true];" \n "};" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorObjectSelectionChanged_inline';					HNEG_fnc_curatorObjectRegistered_inline = {" \n "if (missionNamespace getVariable [""HNEG_emed_curatorDraweh"", -1] == -1 && {missionNamespace getVariable [""HNEG_emed_curatorShowNames"", true]}) then {" \n "private _draweh = addMissionEventHandler [""Draw3D"", {" \n "private _list = (call HNEG_fnc_allEmitterSetsCurator_inline) # 0;" \n "if (isClass (configFile >> ""CfgPatches"" >> ""HNEG_emed_ped"")) then {" \n "_list = (([""allPointersCurator"", []] call HNEG_fnc_getVarM) call HNEG_fnc_allEmitterSetsCurator_inline) # 0;" \n "};" \n "if (missionNamespace getVariable [""HNEG_emed_curatorShowNames"", true]) then {" \n "{" \n "{" \n "if (_x in (curatorEditableObjects (getAssignedCuratorLogic player))) then {" \n "drawIcon3D [" \n """""," \n "if (_x getVariable [""HNEG_emed_thisDisabled"", false]) then {[1, 0, 0, 0.8]} else {[1, 1, 1, 1]}," \n "if (surfaceIsWater (getPosWorld _x)) then {" \n "[" \n "getPosASL _x # 0," \n "getPosASL _x # 1," \n "(((_x modelToWorldVisual [0,0,0]) # 2) - (((positionCameraToWorld [0,0,0]) distance (getPosATL _x)) * (_forEachIndex/2.5) / 25))" \n "];" \n "} else {" \n "[" \n "getPos _X # 0," \n "getPos _x # 1," \n "((getPos _x # 2) - (((positionCameraToWorld [0,0,0]) distance _x) * (_forEachIndex/2.5) / 25))" \n "]," \n "}," \n "1," \n "1," \n "0," \n "vehicleVarName _x," \n "2," \n "(3.9 * ((pixelH * pixelGrid *  0.50)))," \n """RobotoCondensedLight""" \n "];" \n "};" \n "} forEach _x;" \n "} forEach _list;" \n "};" \n "}];" \n "missionNamespace setVariable [""HNEG_emed_curatorDraweh"", _draweh];" \n "};" \n "" \n "[clientOwner] remoteExecCall [""HNEG_fnc_curatorSetOwner_inline"", 2];" \n "" \n "" \n "(curatorEditableObjects (_this # 0)) apply {" \n "if (!(_x getVariable [""HNEG_emed_enableForZeus"", true])) then {" \n "(_this # 0) removeCuratorEditableObjects [[_x], true];" \n "};" \n "};" \n "" \n "_this spawn {" \n "disableSerialization;" \n "waitUntil{!(isNull (findDisplay 312))};" \n "(findDisplay 312) displayAddEventHandler [""unLoad"", {" \n "[2] remoteExecCall [""HNEG_fnc_curatorSetOwner_inline"", 2];" \n "" \n "(_this # 0) displayRemoveEventHandler [""mouseButtonDown"", missionNamespace getVariable [""HNEG_emed_curatorMBeh"", -1]];" \n "missionNamespace setVariable [""HNEG_emed_curatorMBeh"", nil, true];" \n "" \n "removeMissionEventHandler [""Draw3D"", missionNamespace getVariable [""HNEG_emed_curatorDraweh"", -1]];" \n "missionNamespace setVariable [""HNEG_emed_curatorDraweh"", nil, true];" \n "}];" \n "" \n "private _mbeh1 = (findDisplay 312) displayAddEventHandler [""mouseButtonDown"", {" \n "if (_this # 1 == 1 && {!(_this # 4)} && {!(_this # 5)} && {_this # 6} && {!(missionNamespace getVariable [""HNEG_emed_emtrToggled"", false])}) then {" \n "missionNamespace setVariable [""HNEG_emed_emtrToggled"", true, true];" \n "" \n "((vehicleVarName (curatorMouseOver # 1)) call HNEG_fnc_getEmitterSetCurator_inline) params [""_ptrs"", ""_emtrs""];" \n "" \n "{" \n "if (_x getVariable [""HNEG_emed_thisDisabled"", false]) then {" \n "_x setVariable [""HNEG_emed_thisDisabled"", false, true];" \n "" \n "private _emtr = _x getVariable [""HNEG_emed_thisEmtr"", objNull];" \n "private _params = _x getVariable [""HNEG_emed_thisEmtrParams"", []];" \n "if (!(_x getVariable [""HNEG_emed_thisDisabledTrigger"", false])) then {" \n "if (typeOf _emtr == ""#particlesource"") then {" \n "[_emtr, _params # 4] remoteExec [""setDropInterval"", [0, -2] # isDedicated, true];" \n "} else {" \n "[_emtr, _params # 2] remoteExec [""setLightIntensity"", [0, -2] # isDedicated, true];" \n "};" \n "} else {" \n "[_emtr, _params] remoteExecCall [""HNEG_fnc_setEmtrParams_inline"", [0, -2] # isDedicated, true];" \n "_x setVariable [""HNEG_emed_thisDisabledTrigger"", false, true];" \n "};" \n "} else {" \n "_x setVariable [""HNEG_emed_thisDisabled"", true, true];" \n "" \n "private _emtr = _x getVariable [""HNEG_emed_thisEmtr"", objNull];" \n "if (typeOf _emtr == ""#particlesource"") then {" \n "[_emtr, 0] remoteExec [""setDropInterval"", [0, -2] # isDedicated, true];" \n "} else {" \n "[_emtr, 0] remoteExec [""setLightIntensity"", [0, -2] # isDedicated, true];" \n "};" \n "};" \n "} forEach _ptrs;" \n "};" \n "}];" \n "missionNamespace setVariable [""HNEG_emed_curatorMBeh"", _mbeh1];" \n "" \n "private _mbeh2 = (findDisplay 312) displayAddEventHandler [""mouseButtonUp"", {" \n "if (missionNamespace getVariable [""HNEG_emed_emtrToggled"", false]) then {" \n "missionNamespace setVariable [""HNEG_emed_emtrToggled"", false, true];" \n "};" \n "}];" \n "" \n "(findDisplay 312) displayAddEventHandler [""keyDown"", {" \n "if (_this # 1 == 49 && {!(_this # 2)} && {!(_this # 3)} && {_this # 4}) then {" \n "if (missionNamespace getVariable [""HNEG_emed_curatorShowNames"", false]) then {" \n "missionNamespace setVariable [""HNEG_emed_curatorShowNames"", false, true];" \n "} else {" \n "missionNamespace setVariable [""HNEG_emed_curatorShowNames"", true, true];" \n "};" \n "true" \n "};" \n "}];" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorObjectRegistered_inline';					HNEG_fnc_curatorfoo_inline = {" \n "allCurators apply {" \n "if (_this getVariable ['HNEG_emed_thisCoeeh', -1] == -1) then {" \n "private _coeeh = _this addEventHandler ['CuratorObjectEdited', {" \n "if (local (getAssignedCuratorUnit (_this # 0))) then {" \n "(_this # 1) call HNEG_fnc_curatorObjectEdited_inline;" \n "};" \n "}];" \n "_this setVariable ['HNEG_emed_thisCoeeh', _coeeh, true];" \n "};" \n "" \n "if (_this getVariable ['HNEG_emed_thisCodeh', -1] == -1) then {" \n "private _codeh = _this addEventHandler ['CuratorObjectDeleted', {" \n "if (local (getAssignedCuratorUnit (_this # 0))) then {" \n "(_this # 1) call HNEG_fnc_curatorObjectDeleted_inline;" \n "};" \n "}];" \n "_this setVariable ['HNEG_emed_thisCodeh', _codeh, true];" \n "};" \n "" \n "if (_this getVariable ['HNEG_emed_thiscosceh', -1] == -1) then {" \n "private _cosceh = _this addEventHandler ['CuratorObjectSelectionChanged', {" \n "if (local (getAssignedCuratorUnit (_this # 0))) then {" \n "(_this # 1) call HNEG_fnc_curatorObjectSelectionChanged_inline;" \n "};" \n "}];" \n "_this setVariable ['HNEG_emed_thiscosceh', _cosceh, true];" \n "};" \n "" \n "if (_this getVariable ['HNEG_emed_thiscoreh', -1] == -1) then {" \n "private _coreh = _this addEventHandler ['CuratorObjectRegistered', {" \n "if (local (getAssignedCuratorUnit (_this # 0))) then {" \n "" \n "_this call HNEG_fnc_curatorObjectRegistered_inline;" \n "};" \n "}];" \n "_this setVariable ['HNEG_emed_thiscoreh', _coreh, true];" \n "};" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorfoo_inline';					HNEG_fnc_curatorSetOwner_inline = {" \n "private _owner = param[0, 2, [0]];" \n "(call HNEG_fnc_allEmittersCurator_inline) apply {" \n "if (_x getVariable [""HNEG_emed_thisOrigOwner"", 0] != _owner) then {" \n "_x setOwner _owner;" \n "if (!isNull (_x getVariable [""HNEG_emed_thisParent"", objNull])) then {" \n "(_x getVariable [""HNEG_emed_thisParent"", objNull]) setOwner _owner;" \n "};" \n "} else {" \n "_x setOwner (_x getVariable [""HNEG_emed_thisOrigOwner"", 0]);" \n "if (!isNull (_x getVariable [""HNEG_emed_thisParent"", objNull])) then {" \n "(_x getVariable [""HNEG_emed_thisParent"", objNull]) setOwner ((_x getVariable [""HNEG_emed_thisParent"", objNull]) getVariable [""HNEG_emed_thisOrigOwner"", 0]);" \n "};" \n "};" \n "};" \n "};					publicVariable 'HNEG_fnc_curatorSetOwner_inline';					HNEG_fnc_findEmitterCurator_inline = {" \n "private _qry = param[0, """", [""""]];" \n "private _pointers = allMissionObjects ""Helper_Base_F"" select {							_x getVariable [""thisIsHNEGEmitter"", false] || {_x getVariable [""thisIsHNEGAttEmitter"", false]} || {_x getVariable [""thisIsHNEGLight"", false]};					   };" \n "" \n "private _found = _pointers # {toLower (vehicleVarName _x) == toLower _qry};" \n "" \n "if (count _found > 0) exitWith {" \n "(_found # 0) getVariable [""HNEG_emed_thisEmtr"", objNull];" \n "};" \n "objNull" \n "};					publicVariable 'HNEG_fnc_findEmitterCurator_inline';				};			};						_this enableSimulationGlobal false;			_this hideObjectGlobal true;						private _allPointers = missionNamespace getVariable ['HNEG_emed_allEmPointers', []];			if (!(_this in _allPointers)) then {				_allPointers pushBack _this;				missionNamespace setVariable ['HNEG_emed_allEmPointers', _allPointers, true];			};private _emtr = objNull;			private _light = objNull;			private _data = _this getVariable 'HNEG_emed_thisData';			private _pos = _data # 0;			private _terobj = objNull;			private _obj = objNull;			private _sel = '';			private _actDeact = _data # 7;			private _type = _data # 8;			private _rot = _data # 9;			private _params = _data # 1;			if (canSuspend) then {				waitUntil {					sleep 0.5;					missionNamespace getVariable ['BIS_fnc_init', false];				};			};			if (count (_data # 3) > 0) then {				_obj = vehicle (((nearestObjects [(_data # 3) # 0, [], (_data # 3) # 2]) select {typeOf (vehicle _x) == (_data # 3) # 1}) # 0);				if (isNil '_obj') then {					_obj = vehicle (((nearestObjects [(_data # 3) # 0, [], ((_data # 3) # 2) * 2]) select {typeOf (vehicle _x) == (_data # 3) # 1}) # 0);				};				if (isNil '_obj') then {					diag_log (['ERROR: HNEG EMED: COULD NOT FIND PARENT OBJECT FOR ', _pointer,'. PARENT TYPE ', _data # 1] joinString '');					[['ERROR: HNEG EMED: COULD NOT FIND PARENT OBJECT FOR ', _pointer,'. PARENT TYPE ', _data # 1] joinString ''] call BIS_fnc_error;				};				if (!isNull _obj && {!(((_data # 3) # 0) isEqualTo _pos)} && {count _data < 6}) then {					comment '_pos = _obj modelToWorldVisual _pos';				};			};			if (count _data >= 6) then {				_sel = _data # 5;			};						if (count (_data # 6) > 0) then {				private _terobjs = (nearestTerrainObjects [(_data # 6) # 1, [], 50, true, true]);				_terObj = (_terobjs select {((getModelInfo _x) # 0) isEqualTo ((_data # 6) # 0)}) # 0;				if (isNil '_terobj') then {" \n "					_terobjs = (nearestTerrainObjects [(_data # 6) # 1, [], 100, true, true]);					_terObj = (_terobjs select {((getModelInfo _x) # 0) isEqualTo ((_data # 6) # 0)}) # 0;				};				if (isNil '_terObj') then {					diag_log (['ERROR: HNEG EMED: COULD NOT FIND PARENT OBJECT FOR ', _pointer,'. PARENT TYPE ', (_data # 7) # 0] joinString '');					[['ERROR: HNEG EMED: COULD NOT FIND PARENT OBJECT FOR ', _pointer,'. PARENT TYPE ', (_data # 7) # 0] joinString ''] call BIS_fnc_error;				};				_terObj = objNull;			};			if (isNil {_this getVariable ['HNEG_emed_thisDelEH', nil]}) then {				private _eh = _this addEventHandler ['deleted', {					if (count ((_this # 0) getVariable ['HNEG_emed_thisGrpNames', []]) > 1) then {						private _pointers = allMissionObjects 'Helper_Base_F' select {							(_x getVariable ['thisIsHNEGEmitter', false] || {_x getVariable ['thisIsHNEGAttEmitter', false]} || {_x getVariable ['thisIsHNEGLight', false]}) &&							{toLower (vehicleVarName _x) in (((_this # 0) getVariable ['HNEG_emed_thisGrpNames', []]) apply {toLower _x})}						};						{							deleteVehicle _x;							deleteVehicle (_x getVariable ['HNEG_emed_thisEmitter', objNull]);						} forEach (_pointers - [_this # 0]);					};					deleteVehicle ((_this # 0) getVariable ['HNEG_emed_thisEmitter', objNull]);					deleteVehicle (_this # 0);				}];				_this setVariable ['HNEG_emed_thisDelEH', _eh, true];			};						if (!isNull _obj || !isNull _terobj) then {				if (!isNull _obj) then {					if (isNil {_obj getVariable ['HNEG_emed_thisDelEH', nil]}) then {						private _eh = _obj addEventHandler [							'deleted',							{								((_this # 0) getVariable ['HNEG_emed_thisEmitters', []]) apply {									deleteVehicle (_x # 0);								};																(_this # 0) setVariable ['HNEG_emed_thisEmitters', [], true];							}						];						_obj setVariable ['HNEG_emed_thisDelEH', _eh, true];					};										if (_obj getVariable ['HNEG_emed_allowHideShow', false] || {_this getVariable ['HNEG_emed_allowHideShow', false]}) then {						if (isNil {_obj getVariable ['HNEG_emed_thishidefollow_scpt', nil]}) then {							private _scpt = _obj spawn {								if (!local _this) exitWith {};								private _emtrs = _this getVariable ['HNEG_emed_thisEmitters', []];																if (count _emtrs > 0) then {									while {alive _this} do {										if (isObjectHidden _this) then {											{												if (typeOf (_x # 0) == '#particlesource') then {													_this setVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', ((_x # 1) # 4), true];													[_x # 0, 0] remoteExec ['setDropInterval', [0, -2] select isDedicated];												} else {													_this setVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', ((_x # 1) # 2), true];													[_x # 0, 0] remoteExec ['setLightIntensity', [0, -2] select isDedicated];												};											} forEach _emtrs;										} else {											{												if (!isNil {_this getVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', nil]} || !isNil {_this getVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', nil]}) then {													if (typeOf (_x # 0) == '#particlesource') then {														[_x # 0, (_this getVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', 0])] remoteExec ['setDropInterval', [0, -2] select isDedicated];														_this setVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', nil, true];													} else {														[_x # 0, (_this getVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', 0 ])] remoteExec ['setLightIntensity', [0, -2] select isDedicated];														_this setVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', nil, true];													};												};											} forEach _emtrs;										};										sleep (random [0.3, 0.6, 1]);									};								};							};							_obj setVariable ['HNEG_emed_thishidefollow_scpt', _scpt];						};					};				};								if (!isNull _terobj && {isNull _obj}) then {					if (isNil {_terobj getVariable ['HNEG_emed_thisDelEH', nil]}) then {						private _eh = _terobj addEventHandler [							'killed',							{								((_this # 0) getVariable ['HNEG_emed_thisEmitters', []]) apply {									deleteVehicle (_x # 0);								};							}						];						_terobj setVariable ['HNEG_emed_thisDelEH', _eh, true];					};" \n "										if (_this getVariable ['HNEG_emed_allowHideShow', false]) then {						if (isNil {_terobj getVariable ['HNEG_emed_thishidefollow_scpt', nil]}) then {							private _scpt = _terobj spawn {								private _emtrs = _this getVariable ['HNEG_emed_thisEmitters', []];																if (count _emtrs > 0) then {									while {alive _this} do {										if (isObjectHidden _this) then {											{												if (typeOf (_x # 0) == '#particlesource') then {													_this setVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', ((_x # 1) # 4), true];													[_x # 0, 0] remoteExec ['setDropInterval', [0, -2] select isDedicated];												} else {													_this setVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', ((_x # 1) # 2), true];													[_x # 0, 0] remoteExec ['setLightIntensity', [0, -2] select isDedicated];												};											} forEach _emtrs;										} else {											{												if (!(isNil {_this getVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', nil]} || {!isNil {_this getVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', nil]}})) then {													if (typeOf (_x # 0) == '#particlesource') then {														[_x # 0, (_this getVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', 0])] remoteExec ['setDropInterval', [0, -2] select isDedicated];														_this setVariable [ ['HNEG_emed_thisPtcl', _forEachIndex] joinString '', nil, true];													} else {														[_x # 0, (_this getVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', 0 ])] remoteExec ['setLightIntensity', [0, -2] select isDedicated];														_this setVariable [ ['HNEG_emed_thisLight', _forEachIndex] joinString '', nil, true];													};												};											} forEach _emtrs;										};										sleep (random [0.3, 0.6, 1]);									};								};							};							_terobj setVariable ['HNEG_emed_thishidefollow_scpt', _scpt, true];						};					};				};			};						_emtr = _type createVehicle _pos;			if (_type == '#lightreflector' && {count _rot > 0}) then {				_emtr setVectorDirAndUp _rot;			};			if (!isNull _obj) then {_emtr disableCollisionWith _obj};			_emtr setPos _pos;			_this setVariable ['HNEG_emed_thisEmitter', _emtr];			if (!isNull _obj) then {				_emtr setPos (_obj modelToWorldVisual _pos);				private _vars = _obj getVariable ['HNEG_emed_thisEmitters', []];				_vars pushBackUnique [_emtr, _params];				_obj setVariable ['HNEG_emed_thisEmitters', _vars, true];				_this setVariable ['HNEG_emed_thisParent', _obj, true];								private _objPtrs = _obj getVariable ['HNEG_emed_thisPointers', []];				_objPtrs pushBackUnique _this;				_obj setVariable ['HNEG_emed_thisPointers', _objPtrs, true];								_this attachTo [					_obj,					_obj worldToModelVisual [						(_obj getPos [_obj distance _this, _obj getDir _this]) # 0,						(_obj getPos [_obj distance _this, _obj getDir _this]) # 1,						(getPos _this) # 2					]				];			};						if (!isNull _terobj) then {				private _vars = _terobj getVariable ['HNEG_emed_thisEmitters', []];				_vars pushBackUnique _emtr;				_terobj setVariable ['HNEG_emed_thisEmitters', _vars, true];								private _objPtrs = _obj getVariable ['HNEG_emed_thisPointers', []];				_objPtrs pushBackUnique _this;				_obj setVariable ['HNEG_emed_thisPointers', _objPtrs, true];			};						if (!isNull _obj) then {				if (count _sel > 0) then {					_emtr attachTo [						_obj,						[0, 0, 0],						_sel					];				} else {					_emtr attachTo [						_obj,						_pos					];				};			};						if ((_data # 2) == -1) then {				[_emtr, _params] remoteExecCall ['HNEG_fnc_setEmtrParams_inline', [0, -2] select isDedicated, true];								if ((_data # 4) > 0) then {					[_emtr, _data # 4, _this] spawn {						private _lightDieOutT = time;						if (isMultiplayer) then {							estimatedTimeLeft 0;							_lightDieOutT = serverTime;						};						waitUntil {							sleep 1;							if (isMultiplayer) then {								serverTime - _lightDieOutT >= (_this # 1)							} else {								time - _lightDieOutT >= (_this # 1)							};						};						if (alive (_this # 0)) then {							deleteVehicle (_this # 0);							deleteVehicle (_this # 2);						};					};				};			} else {				HNEG_void4 = [_this, _emtr, _data, _obj, _sel, _actDeact] spawn {					private _pointer = _this # 0;					private _data = _this # 2;					private _pos = _data # 0;					private _params = _data # 1;					private _trigger = ((allMissionObjects 'EmptyDetector') select {(_x getVariable ['HNEG_emed_triggerIdent', -1]) == (_data # 2)}) # 0;					private _emtr = _this # 1;					private _obj = _this # 3;					private _sel = _this # 4;										if (isNil '_trigger') exitWith {" \n "						diag_log (['ERROR: HNEG EMED: SYNC TO TRIGGER FAILED, TRIGGER NOT FOUND. EMITTER: ', _pointer,' <> TRIGGER: ', _data # 3] joinString '');						[['ERROR: HNEG EMED: SYNC TO TRIGGER FAILED, TRIGGER NOT FOUND. EMITTER: ', _pointer,' <> TRIGGER: ', _data # 3] joinString ''] call BIS_fnc_error;					};					private _vars = _trigger getVariable ['HNEG_emed_thisEmitters', []];					_vars pushBackUnique [_emtr, _params];					_trigger setVariable ['HNEG_emed_thisEmitters', _vars, true];										if (!(_trigger getVariable ['thisHNEGEdentoolsStatementsSet', false])) then {						_trigger setVariable ['thisHNEGEdentoolsStatementsSet', true];												private _statements = triggerStatements _trigger;						_trigger setTriggerStatements [							_statements # 0,							[								_statements # 1,								'; {if ((thisTrigger getVariable [ [''HNEG_emed_thisPtcl'', _forEachIndex] joinString '''', -1]) > -1 || (thisTrigger getVariable [ [''HNEG_emed_thisLight'', _forEachIndex] joinString '''', -1]) > -1) then {if (typeOf (_x # 0) == ''#particlesource'') then {[_x # 0, (thisTrigger getVariable [ [''HNEG_emed_thisPtcl'', _forEachIndex] joinString '''', 0])] remoteExec [''setDropInterval'', [0, -2] select isDedicated]; thisTrigger setVariable [ [''HNEG_emed_thisPtcl'', _forEachIndex] joinString '''', -1]} else {[_x # 0, (thisTrigger getVariable [ [''HNEG_emed_thisLight'', _forEachIndex] joinString '''', 0 ])] remoteExec [''setLightIntensity'', [0, -2] select isDedicated]; thisTrigger setVariable [ [''HNEG_emed_thisLight'', _forEachIndex] joinString '''', -1]}}} forEach (thisTrigger getVariable [''HNEG_emed_thisEmitters'', []]);'							] joinString '',							[								_statements # 2,								'; {if (typeOf (_x # 0) == ''#particlesource'') then {thisTrigger setVariable [ [''HNEG_emed_thisPtcl'', _forEachIndex] joinString '''', ((_x # 1) # 4)]; [_x # 0, 0] remoteExec [''setDropInterval'', [0, -2] select isDedicated]} else {thisTrigger setVariable [ [''HNEG_emed_thisLight'', _forEachIndex] joinString '''', ((_x # 1) # 2) ]; [_x # 0, 0] remoteExec [''setLightIntensity'', [0, -2] select isDedicated]}} forEach (thisTrigger getVariable [''HNEG_emed_thisEmitters'', []]);'							] joinString ''						];					};										if (!isNull _obj) then {						if (count _sel > 0) then {							_emtr attachTo [								_obj,								[0, 0, 0],								_sel							];						} else {							_emtr attachTo [								_obj,								_pos							];						};					};										waitUntil{						sleep 0.01;						triggerActivated _trigger;					};					if (!(_pointer getVariable ['HNEG_emed_thisDisabled', false])) then {						_pointer setVariable ['HNEG_emed_thisDisabledTrigger', false, true];						[_emtr, _params] remoteExecCall ['HNEG_fnc_setEmtrParams_inline', [0, -2] select isDedicated, true];					} else {						_pointer setVariable ['HNEG_emed_thisDisabledTrigger', true, true];					};										if (_data # 4 > 0) then {						[[_emtr], _data # 4, _this] spawn {							private _lightDieOutT = time;							if (isMultiplayer) then {								estimatedTimeLeft 0;								_lightDieOutT = serverTime;							};							waitUntil {								sleep 1;								if (isMultiplayer) then {									serverTime - _lightDieOutT >= (_this # 1);								} else {									time - _lightDieOutT >= (_this # 1);								};							};							(_this # 0) apply {deleteVehicle _x};							deleteVehicle (_this # 2);						};					};				};			};						_this setVariable ['HNEG_emed_thisEmtr', _emtr, true];			_this setVariable ['HNEG_emed_thisEmtrParams', _params, true];						_this spawn {				sleep 1;				private _pobj = _this getVariable ['HNEG_emed_thisParent', objNull];				if (isNil '_pobj') then {_pobj = objNull};				if (count allCurators > 0 && {(_this getVariable ['HNEG_emed_curatorData', [false, false]]) # 0}) then {					missionNamespace setVariable ['HNEG_emed_curatorShowNames', (_this getVariable ['HNEG_emed_curatorData', [false, false]]) # 1, true];					if ((count (_this getVariable ['HNEG_emed_onlyZeus', '']) > 0) || !isNull _pobj && {count (_pobj getVariable ['HNEG_emed_onlyZeus', '']) > 0}) then {						if (!isNull _pobj) then {							if ((_pobj getVariable ['HNEG_emed_onlyZeus', '']) find ';' == -1) then {								(call compile (_pobj getVariable ['HNEG_emed_onlyZeus', ''])) addCuratorEditableObjects [[_this, (_this getVariable ['HNEG_emed_thisParent', objNull])], true];							} else {								{									(call compile _x) addCuratorEditableObjects [[_this, (_this getVariable ['HNEG_emed_thisParent', objNull])], true];								} forEach ((_pobj getVariable ['HNEG_emed_onlyZeus', '']) splitString ';' apply {call compile _x});							};							(_this getVariable ['HNEG_emed_thisParent', objNull]) setVariable [								'HNEG_emed_thisOrigOwner',								clientOwner							];						} else {							if ((_this getVariable ['HNEG_emed_onlyZeus', '']) find ';' == -1) then {								(call compile (_this getVariable ['HNEG_emed_onlyZeus', ''])) addCuratorEditableObjects [[_this], false];							} else {								{									(call compile _x) addCuratorEditableObjects [[_this, (_this getVariable ['HNEG_emed_thisParent', objNull])], true];								} forEach ((_pobj getVariable ['HNEG_emed_onlyZeus', '']) splitString ';' apply {call compile _x});							};						};					} else {						allCurators apply {							if (!(_this in (curatorEditableObjects _x)) && {_this getVariable ['HNEG_emed_enableForZeus', false]}) then {								if (!isNull _pobj) then {									_x addCuratorEditableObjects [[_this, _pobj], true];									_pobj setVariable [										'HNEG_emed_thisOrigOwner',										clientOwner									];								} else {									_x addCuratorEditableObjects [[_this], false];								};							};							if (isNil {_this getVariable ['HNEG_emed_curatorInit', nil]}) then {								if (!isNull (getAssignedCuratorUnit _x)) then {									_this setVariable ['HNEG_emed_curatorInit', true, true];									_x remoteExecCall ['HNEG_fnc_curatorfoo_inline', getAssignedCuratorUnit _x];								};							};						};					};				};			};		};";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterNr";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emitterNrOld";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item13
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4487.1982,114.3875,4831.7852};
+				position[]={4487.9209,114.3875,4832.6348};
 			};
 			side="Empty";
 			flags=5;
