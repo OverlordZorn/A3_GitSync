@@ -1,0 +1,12 @@
+class CfgFunctions
+{
+	class ZRN
+	{
+		class bigBoom
+		{
+			class bigBoomObj {};
+			class bigBoomPrep {};
+			class bigBoomLight {};
+		};
+	};
+};
