@@ -1,3 +1,5 @@
+if (!hasInterface) then exitWith {};
+
 params [
     ["_startTime", 0,           [0]         ],  // CBA_missionTime
     [ "_fuelTank", objNull,     [objNull]   ],
