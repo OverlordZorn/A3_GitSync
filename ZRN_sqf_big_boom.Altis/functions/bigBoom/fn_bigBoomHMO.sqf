@@ -1,6 +1,7 @@
 params [
-    [ "_fuelTank", objNull, [objNull]   ],
-    ["_startTime", 0,       [0]         ]   // CBA_missionTime
+    ["_startTime", 0,           [0]         ],  // CBA_missionTime
+    [ "_fuelTank", objNull,     [objNull]   ],
+    [ "_helperObj", objNull,    [objNull]   ]
  ];
 
 
@@ -11,11 +12,13 @@ enableCamShake true;
 private _pos = getPos _fuelTank;
 private _radius = boundingBoxReal _fuelTank # 2 * 0.4;
 
-private _varName = ["ZRN","fuelTank","HMO",_pos#0,_pos#1,_pos#2] joinString "_";
+private _varNameHMO = ["ZRN","HMO",vehicleVarName _fuelTank] joinString "_";
+_helperObj setVariable ["varNameHMO", _varNameHMO];
 
 private _HashMapObject = createHashMapObject [[
 
-    ["varName", _varName],
+    ["varNameHMO", _varNameHMO],
+    ["helperObj", _helperObj],
 
     ["startTime", _startTime],
     ["intensity", 1],
@@ -38,9 +41,9 @@ private _HashMapObject = createHashMapObject [[
     ["smoke_max", 0.1],
     ["smoke_rate", 60],
 
-    ["light_max", 10000000],
+    ["light_max", 5000000],
     ["light_min", 10000],
-    ["light_rate", 0.1],
+    ["light_rate", 0.3],
 
     ["red_max", 0.9],
     ["red_min", 0.8],
@@ -57,28 +60,38 @@ private _HashMapObject = createHashMapObject [[
 
         private _pos = (_self get "pos");
         private _distance = player distance _pos;
+
+
         [{
+            // Execute Camera Shake
             params ["_distance","_pos"];
-            _intensity = linearConversion[0,2000,_distance,10,2];
-            _duration = linearConversion[0,2000,_distance,10,2];
+            _intensity = linearConversion[0,2000,_distance,15,2];
+            _duration = linearConversion[0,2000,_distance,15,7];
             addCamShake [_intensity, 5, _duration];
 
+            // Depending on distance, there is a chance that you will be kicked over by the blastwave
+            if  ( /*_distance < random 750*/ true ) then {
 
-            if  (_distance > random 1000 ) then {
+                [{
+                    params ["_distance","_pos"];
 
-                private _forceMultiplyer = linearConversion [0, 500, _distance, 3000, 300];
-                private _force = _pos vectorFromTo getPos player vectorMultiply _forceMultiplyer;
-                _force set [2, _force#2 + 500];
+                    private _forceMultiplyer = linearConversion [0, 500, _distance, 3000, 300];
 
-                player allowDamage false;
-                player addForce [_force, [0,0,1]];
+                    if (_forceMultiplyer <= 0) exitWith {};
+                    private _dirVector = _pos vectorFromTo (getPos player);
+                    private _force =  _dirVector vectorMultiply _forceMultiplyer;
+                    _force set [2, _force#2 + 500];
+                    player allowDamage false;
+                    player addForce [_force, [0,0,1]];
 
-                [{(animationState _this) find "ace_medical_engine_uncon_anim_face" != -1}, {
-                	[{
-                		_this setUnconscious false;
-                		_this allowDamage true;
-                	}, _this, 2] call CBA_fnc_waitAndExecute;
-                }, _unit, 20] call CBA_fnc_waitUntilAndExecute;
+                    [{(animationState _this) find "ace_medical_engine_uncon_anim_face" != -1}, {
+                        [{
+                            _this setUnconscious false;
+                            _this allowDamage true;
+                        }, _this, 2] call CBA_fnc_waitAndExecute;
+                    }, player, 20] call CBA_fnc_waitUntilAndExecute;
+            
+                }, [_distance,_pos], 0.25] call CBA_fnc_waitAndExecute;
 
             };
         }, [_distance, _pos], 0.01 + _distance / 343 ] call CBA_fnc_waitAndExecute;
@@ -87,23 +100,32 @@ private _HashMapObject = createHashMapObject [[
     }],
 
 	["#delete", {
+        diag_log "[CVO](debug)(fn_bigBoomHMO) #delete ";
         deleteVehicle (_self get "src_fire");
         deleteVehicle (_self get "src_smoke");
         deleteVehicle (_self get "src_light");
     }],
 
     ["#create", {
+        diag_log "[CVO](debug)(fn_bigBoomHMO) #create ";
         _self call ["Establish_EH"];
+        _self call ["Execute_Shockwave"];
         
         _self call ["Start_Fire"];
         _self call ["Start_Light"];
-        
-        _self call ["Start_Smoke"];
+        _self call ["Update_Fire"];
+        _self call ["Update_Light"];
+
+        [{
+            _this#0 call ["Start_Smoke"];
+            _this#0 call ["Update_Smoke"];
+        }, [_self], 2] call CBA_fnc_waitAndExecute;
+
     }],
 
     ["Start_Fire", {
         private _radius = _self get "radius";
-        private _pos = + _self get "pos";
+        private _pos = + (_self get "pos");
         _pos set [2, _pos#2 + _radius*0.75];
 
         _src_fire = createVehicleLocal ["#particlesource", _pos];
@@ -124,17 +146,17 @@ private _HashMapObject = createHashMapObject [[
         _src_fire setDropInterval linearConversion[0,1,_intensity, _self get "fire_min", _self get "fire_max"];
 
         private _code = {
-            params ["_varName"];
-            _hmo = missionNamespace getVariable [_varName, "404"];
+            params ["_varNameHMO"];
+            _hmo = missionNamespace getVariable [_varNameHMO, "404"];
             if (_hmo isEqualTo "404") exitWith {};
             _hmo call ["Update_Fire"];
         };      
-        [_code, [_self get "varName"], _self get "fire_rate"] call CBA_fnc_waitAndExecute;        
+        [_code, [_self get "varNameHMO"], _self get "fire_rate"] call CBA_fnc_waitAndExecute;        
     }],
 
     ["Start_Light", {
         private _radius = _self get "radius";
-        private _pos = + _self get "pos";
+        private _pos = + (_self get "pos");
         _pos set [2, _pos#2 + _radius*0.75];
 
         _src_light = createVehicleLocal ["#lightpoint", _pos];
@@ -150,9 +172,9 @@ private _HashMapObject = createHashMapObject [[
         _self call ["Update_Value"];
         private _src_light = _self get "src_light";
         private _intensity = _self get "intensity";
-        _intensity = _intensity + _intensity * random 0.2;
+        _intensity = _intensity + _intensity * random 0.2 * selectRandom[-1,1];
 
-        _src_light setLightIntensity (linearConversion [0,1,_intensity,_self get "Intensity_min",_self get "Intensity_max",false]);
+        _src_light setLightIntensity (linearConversion [0,1,_intensity,_self get "light_min",_self get "light_max",false]);
         _src_light setLightColor [
             linearConversion [0,1,_intensity,_self get "red_max",_self get "red_min",true],
             linearConversion [0,1,_intensity,_self get "green_min",_self get "green_max",true],
@@ -166,18 +188,18 @@ private _HashMapObject = createHashMapObject [[
 
 
         private _code = {
-            params ["_varName"];
-            _hmo = missionNamespace getVariable [_varName, "404"];
+            params ["_varNameHMO"];
+            _hmo = missionNamespace getVariable [_varNameHMO, "404"];
             if (_hmo isEqualTo "404") exitWith {};
             _hmo call ["Update_Light"];
         };      
-        [_code, [_self get "varName"], _self get "light_rate"] call CBA_fnc_waitAndExecute;
+        [_code, [_self get "varNameHMO"], _self get "light_rate"] call CBA_fnc_waitAndExecute;
     }],
 
 
     ["Start_Smoke", {
         private _radius = _self get "radius";
-        private _pos = + _self get "pos";
+        private _pos = + (_self get "pos");
         _pos set [2, _pos#2 + _radius*0.75];
 
         _src_smoke = createVehicleLocal ["#particlesource", _pos];
@@ -198,12 +220,12 @@ private _HashMapObject = createHashMapObject [[
         _src_fire setDropInterval linearConversion[0,1,_intensity, _self get "smoke_min", _self get "smoke_max"];
 
         private _code = {
-            params ["_varName"];
-            _hmo = missionNamespace getVariable [_varName, "404"];
+            params ["_varNameHMO"];
+            _hmo = missionNamespace getVariable [_varNameHMO, "404"];
             if (_hmo isEqualTo "404") exitWith {};
             _hmo call ["Update_Smoke"];
         };      
-        [_code, [_self get "varName"], _self get "smoke_rate"] call CBA_fnc_waitAndExecute;
+        [_code, [_self get "varNameHMO"], _self get "smoke_rate"] call CBA_fnc_waitAndExecute;
     }],
 
     ["Update_Value", {
@@ -212,12 +234,20 @@ private _HashMapObject = createHashMapObject [[
         private _intensity = 1.2 / (((_pastTime / 8.412) - 0.6)^2 + 1 );
         _self set ["intensity", _intensity];
     }],
+
+    // kills the effect spawner and HMO when helper object gets deleted (for example, by zeus)
     ["Establish_EH", {
-        private _obj = _self get "fuelTank";
-        _obj addEventHandler ["Deleted", {
-	        params ["_entity"];
-            private _varName = ["ZRN","fuelTank","HMO",_pos#0,_pos#1,_pos#2] joinString "_";
-            missionNameSpace setVariable [_varName, nil]; // Will delete the HMO
+        private _helperObj = _self get "helperObj";
+
+        diag_log format ['[CVO](debug)(fn_bigBoomHMO) _helperObj: %1 - "": %2', _helperObj , "deleted event handler established"];
+
+        _helperObj addEventHandler ["Deleted", {
+	        params ["_helperObj"];
+            private _varNameHMO = _helperObj getVariable "varNameHMO";
+            missionNameSpace setVariable [_varNameHMO, nil]; // Will delete the HMO
+            diag_log format ['[CVO](debug)(fn_bigBoomHMO) isNil _varNameHMO: %1', isNil _varNameHMO];
         }];
     }]
 ]]; 
+
+missionNamespace setVariable [_varNameHMO, _HashMapObject];

@@ -4,9 +4,8 @@ class CfgFunctions
 	{
 		class bigBoom
 		{
-			class bigBoomObj {};
+			class bigBoomHMO {};
 			class bigBoomPrep {};
-			class bigBoomLight {};
 		};
 	};
 };

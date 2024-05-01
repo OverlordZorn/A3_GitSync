@@ -1,0 +1,1 @@
+diag_log "Does InitServer get executed on singleplayer?!"; // yea, it does lol

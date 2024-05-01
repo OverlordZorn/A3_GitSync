@@ -8,25 +8,25 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=63;
+		nextID=84;
 	};
 	class Camera
 	{
-		pos[]={5281.6831,128.4895,17135.598};
-		dir[]={0.92113364,-0.35725772,0.15527606};
-		up[]={0.35237533,0.93396372,0.059400003};
-		aside[]={0.16624689,-1.3806857e-007,-0.98620057};
+		pos[]={5467.9741,139.35854,17905.791};
+		dir[]={-0.76573503,-0.56822324,-0.30128434};
+		up[]={-0.52876651,0.82287449,-0.20804726};
+		aside[]={-0.36613649,0,0.93056124};
 	};
 };
 binarizationWanted=0;
 sourceName="ZRN_sqf_big_boom";
 addons[]=
 {
-	"A3_Weapons_F_Explosives",
-	"A3_Modules_F_Curator_Mines",
 	"A3_Structures_F_Ind_DieselPowerPlant",
 	"A3_Characters_F_Enoch",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"A3_Weapons_F_Explosives",
+	"A3_Modules_F_Curator_Mines"
 };
 class AddonsMetaData
 {
@@ -35,36 +35,36 @@ class AddonsMetaData
 		items=5;
 		class Item0
 		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item1
-		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item1
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item2
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -72,8 +72,8 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"Curator",
-	"Enoch"
+	"Enoch",
+	"Curator"
 };
 randomSeed=15164686;
 class ScenarioData
@@ -303,30 +303,31 @@ class Mission
 		year=2035;
 		day=28;
 		hour=4;
-		minute=28;
+		minute=0;
 		startFogBase=171.53552;
 		startFogDecay=0;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5393.2998,76.833092,17895.311};
-				angles[]={0.0027536817,6.2315784,0.024167722};
+				position[]={5391.4888,79.666359,17905.342};
+				angles[]={0,6.2315936,0};
 			};
 			side="Empty";
-			flags=4;
+			flags=5;
 			class Attributes
 			{
-				name="ex_3";
+				name="fuel_1";
 			};
-			id=29;
-			type="SatchelCharge_F";
+			id=36;
+			type="Land_dp_bigTank_F";
+			atlOffset=0.028991699;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -415,412 +416,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5406.0845,76.635147,17901.213};
-				angles[]={6.2418756,6.2315965,6.2778587};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="ex_4";
-			};
-			id=33;
-			type="SatchelCharge_F";
-			atlOffset=0.00073242188;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item2
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5406.7202,76.018463,17886.811};
-				angles[]={0,6.2316604,6.2338943};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="ex_5";
-			};
-			id=35;
-			type="SatchelCharge_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item3
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5391.4893,79.666214,17905.342};
-				angles[]={0,6.2315946,0};
+				position[]={5393.2578,79.653358,17887.92};
+				angles[]={0,6.2315936,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				name="fuel_6";
-			};
-			id=36;
-			type="Land_dp_bigTank_F";
-			atlOffset=0.028846741;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item4
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5392.1787,76.797783,17912.734};
-				angles[]={6.2567744,6.2316108,6.2778273};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="ex_6";
-			};
-			id=37;
-			type="SatchelCharge_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item5
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5393.2583,79.653336,17887.92};
-				angles[]={0,6.2315946,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				name="fuel_7";
+				name="fuel_0";
 			};
 			id=38;
 			type="Land_dp_bigTank_F";
@@ -907,207 +510,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5405.5171,76.800316,17908.781};
-				angles[]={6.2711902,6.2316647,6.2605233};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="ex_7";
-			};
-			id=39;
-			type="SatchelCharge_F";
-			atlOffset=-7.6293945e-006;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5389.4473,76.759338,17923.533};
-				angles[]={0.012718694,6.2315555,6.2438178};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="ex_8";
-			};
-			id=41;
-			type="SatchelCharge_F";
-			atlOffset=-0.0083999634;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item8
+		class Item2
 		{
 			dataType="Group";
 			side="East";
@@ -1139,23 +542,23 @@ class Mission
 			id=44;
 			atlOffset=6.1035156e-005;
 		};
-		class Item9
+		class Item3
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5390.543,79.638969,17923.895};
-				angles[]={0,6.2315946,0};
+				position[]={5390.543,79.63855,17923.895};
+				angles[]={0,6.2315936,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				name="fuel_8";
+				name="fuel_2";
 			};
 			id=40;
 			type="Land_dp_bigTank_F";
-			atlOffset=-0.0085830688;
+			atlOffset=-0.0090026855;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1239,7 +642,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item10
+		class Item4
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1373,7 +776,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item11
+		class Item5
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1506,13 +909,13 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item12
+		class Item6
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5405.7446,81.592613,17909.113};
-				angles[]={6.2711902,6.2315936,6.2605233};
+				position[]={5413.5854,81.775368,17923.775};
+				angles[]={6.2126365,6.2315936,0.050622065};
 			};
 			side="Empty";
 			flags=4;
@@ -1605,112 +1008,13 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item13
+		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5406.8652,81.368484,17899.877};
-				angles[]={6.2418756,6.2315936,6.2778587};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="fuel_4";
-			};
-			id=55;
-			type="Land_dp_smallTank_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="HNEG_emed_aedInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="HNEG_emed_emitterInit";
-					expression=" if (!is3DEN) then { _this call compile _value; }; ";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="HNEG_emed_emtrDieout2ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="HNEG_emed_emtrDieout1ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="HNEG_emed_emtrDieout4ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="HNEG_emed_emtrDieout3ID";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="0";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item14
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5406.438,80.825844,17887.227};
-				angles[]={0,6.2315936,6.2338943};
+				position[]={5415.0308,80.915878,17891.701};
+				angles[]={6.2378831,6.2315936,0.061256282};
 			};
 			side="Empty";
 			flags=4;
@@ -1803,7 +1107,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item15
+		class Item8
 		{
 			dataType="Group";
 			side="East";
@@ -1816,7 +1120,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5296.8188,124.27151,17140.127};
-						angles[]={0,1.5673324,-0};
+						angles[]={0,1.5673324,0};
 					};
 					side="East";
 					flags=7;
@@ -1825,6 +1129,7 @@ class Mission
 					};
 					id=58;
 					type="O_R_recon_exp_F";
+					atlOffset=-7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1970,6 +1275,7 @@ class Mission
 					showWP="NEVER";
 					id=61;
 					type="Move";
+					atlOffset=7.6293945e-006;
 				};
 				class Item4
 				{
@@ -1990,6 +1296,891 @@ class Mission
 				formation="DIAMOND";
 			};
 			id=57;
+			atlOffset=-7.6293945e-006;
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5414.3438,81.47506,17907.531};
+				angles[]={6.2658563,6.2315936,6.276526};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="fuel_4";
+			};
+			id=55;
+			type="Land_dp_smallTank_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5423.6333,81.375366,17907.512};
+				angles[]={6.2578578,6.2315936,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="fuel_6";
+			};
+			id=63;
+			type="Land_dp_smallTank_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5396.7568,77.102463,17894.883};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_0";
+			};
+			id=71;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5399.123,77.115463,17904.109};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_1";
+			};
+			id=78;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5398.2007,77.087654,17925.07};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_2";
+			};
+			id=79;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5416.8823,77.540436,17923.434};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_3";
+			};
+			id=80;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5416.5493,76.97126,17910.387};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_4";
+			};
+			id=81;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5418.5503,76.587303,17892.002};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_5";
+			};
+			id=82;
+			type="DemoCharge_F";
+			atlOffset=0.085266113;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5426.6865,76.994019,17908.379};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ex_6";
+			};
+			id=83;
+			type="DemoCharge_F";
+			atlOffset=0.26934814;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
 		};
 	};
 };
