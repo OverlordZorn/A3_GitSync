@@ -8,31 +8,37 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=84;
+		nextID=112;
 	};
 	class Camera
 	{
-		pos[]={5467.9741,139.35854,17905.791};
-		dir[]={-0.76573503,-0.56822324,-0.30128434};
-		up[]={-0.52876651,0.82287449,-0.20804726};
-		aside[]={-0.36613649,0,0.93056124};
+		pos[]={3397.0432,323.54306,14907.424};
+		dir[]={0.5921151,-0.63954425,-0.4905512};
+		up[]={0.49244577,0.76853633,-0.40796855};
+		aside[]={-0.63801801,4.0582308e-006,-0.77011466};
 	};
 };
 binarizationWanted=0;
-sourceName="ZRN_sqf_big_boom";
+sourceName="zrn_sqf_big_boom";
 addons[]=
 {
 	"A3_Structures_F_Ind_DieselPowerPlant",
 	"A3_Characters_F_Enoch",
 	"A3_Modules_F",
 	"A3_Weapons_F_Explosives",
-	"A3_Modules_F_Curator_Mines"
+	"A3_Modules_F_Curator_Mines",
+	"A3_Structures_F_Items_Electronics",
+	"ace_tripod",
+	"A3_Weapons_F_Enoch",
+	"A3_Structures_F_Ind_Cargo",
+	"ace_cargo",
+	"A3_Structures_F_Heli_Ind_Cargo"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=10;
 		class Item0
 		{
 			className="A3_Structures_F_Ind";
@@ -68,12 +74,48 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item5
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item6
+		{
+			className="ace_tripod";
+			name="ACE3 - Tripod";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item7
+		{
+			className="A3_Weapons_F_Enoch";
+			name="Arma 3 Contact Platform - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item9
+		{
+			className="A3_Structures_F_Heli";
+			name="Arma 3 Helicopters - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
 	"Enoch",
-	"Curator"
+	"Curator",
+	"Heli"
 };
 randomSeed=15164686;
 class ScenarioData
@@ -288,11 +330,12 @@ class Mission
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.1061217;
+		startWeather=0;
 		startWind=0.1;
 		startRain=0.49718651;
 		startWaves=0.1;
-		forecastWeather=0.1595767;
+		forecastWeather=0;
+		forecastFog=0.107127;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastRain=0.49999982;
@@ -301,16 +344,15 @@ class Mission
 		wavesForced=1;
 		windForced=1;
 		year=2035;
-		day=28;
-		hour=4;
-		minute=0;
-		startFogBase=171.53552;
+		day=11;
+		minute=9;
+		startFogBase=-774.67932;
 		startFogDecay=0;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=18;
+		items=37;
 		class Item0
 		{
 			dataType="Object";
@@ -2181,6 +2223,406 @@ class Mission
 				};
 				nAttributes=6;
 			};
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3573.8511,13.660035,14545.71};
+				angles[]={0.28907889,6.1561775,0.037995819};
+			};
+			side="Empty";
+			class Attributes
+			{
+				createAsSimpleObject=1;
+			};
+			id=84;
+			type="Land_HandyCam_F";
+			atlOffset=1.1642942;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3573.8257,13.184228,14545.56};
+				angles[]={-0,0,6.282495};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=85;
+			type="ACE_TripodObject";
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3835.6418,46.884411,14558.679};
+				angles[]={0,3.0580599,0.1175039};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=86;
+			type="Item_muzzle_antenna_03_f";
+			atlOffset=1.5535316;
+		};
+		class Item21
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3588.2981,20.837,14485.989};
+			};
+			title="1. A Listen into Meeting";
+			id=90;
+			atlOffset=-1.9073486e-005;
+		};
+		class Item22
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3837.063,44.668999,14559.294};
+			};
+			title="1.B Listen from here";
+			id=91;
+			atlOffset=3.8710938;
+		};
+		class Item23
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3826.855,38.581001,14563.271};
+				angles[]={0.078505196,0,0.11548408};
+			};
+			title="1. C Players hear about some Intel located somewhere and another meeting later";
+			id=92;
+			atlOffset=-9.5367432e-005;
+		};
+		class Item24
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3829.156,33.775002,14602.53};
+			};
+			title="2. Player find intel about sth bad";
+			id=93;
+			atlOffset=-5.3405762e-005;
+		};
+		class Item25
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3833.8125,33.126247,14615.349};
+				angles[]={0.13517068,0,0.13909654};
+			};
+			title="3. player find payphone, call retiried general and inform him about the bad stuff";
+			id=94;
+		};
+		class Item26
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3836.6724,32.611443,14625.526};
+				angles[]={0.1312411,0,0.17809267};
+			};
+			title="4. general responds and says: thats enough evidence, we need to act now, go and destroy those {bad_stuff} and take out the politician.";
+			id=95;
+		};
+		class Item27
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3838.356,30.81694,14636.954};
+				angles[]={0.24686028,0,0.12730782};
+			};
+			title="4. Cont.: There is a safehouse nearby in xyz. it should have everything you need to get the job done tonight.";
+			id=96;
+		};
+		class Item28
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3837.0254,26.666172,14646.039};
+				angles[]={0.0093286335,0,0.87166345};
+			};
+			title="4. cont.cont.: ... Oh shit, something is happening outside. i need to leave... *hangs the phone...*";
+			id=97;
+		};
+		class Item29
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3835.812,14.924,14669.228};
+			};
+			title="5. Players reach safehouse. Time Passes. (2-3 hours...)";
+			id=98;
+			atlOffset=-2.2888184e-005;
+		};
+		class Item30
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4322.4282,19.122904,15013.159};
+				angles[]={6.1848369,0,0.030656165};
+			};
+			title="CP";
+			id=103;
+		};
+		class Item31
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3622.2551,39.449486,14282.723};
+				angles[]={6.249866,0,0.0053265258};
+			};
+			title="CP";
+			id=104;
+		};
+		class Item32
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4124.6113,70.52034,15669.938};
+				angles[]={6.1848369,0,0.030656165};
+			};
+			title="CP";
+			id=105;
+			atlOffset=1.5258789e-005;
+		};
+		class Item33
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4351.9692,15.768,14785.763};
+			};
+			title="RV";
+			id=106;
+			atlOffset=2.8598547;
+		};
+		class Item34
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5764.7832,28.173546,14663.72};
+				angles[]={0.00034526695,3.6943576,6.2808695};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=108;
+			type="Land_Cargo20_grey_F";
+		};
+		class Item35
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5764.7461,28.201546,14666.56};
+				angles[]={0.00034906581,3.6835628,6.2808642};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=110;
+			type="Land_Cargo10_red_F";
+			atlOffset=0.28934097;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="HNEG_emed_aedInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="HNEG_emed_emitterInit";
+					expression=" if (!is3DEN) then { _this call compile _value; }; ";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="true";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="HNEG_emed_emtrDieout2ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="HNEG_emed_emtrDieout1ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="HNEG_emed_emtrDieout4ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="HNEG_emed_emtrDieout3ID";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=6;
+			};
+		};
+		class Item36
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={6045.5347,24.254877,14908.162};
+			};
+			title="CP";
+			id=111;
 		};
 	};
 };

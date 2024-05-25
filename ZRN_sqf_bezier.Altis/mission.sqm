@@ -1,0 +1,440 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=15;
+	};
+	class Camera
+	{
+		pos[]={15631.524,164.31052,15987.957};
+		dir[]={-0.84862101,-0.44080469,-0.29260877};
+		up[]={-0.41674134,0.89759386,-0.14369376};
+		aside[]={-0.32598644,-4.9767186e-007,0.94542193};
+	};
+};
+binarizationWanted=0;
+sourceName="ZRN_sqf_bezier";
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Air_F_Heli_Light_01",
+	"ace_realisticnames",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Misc_F_Helpers",
+	"A3_Structures_F_Heli_VR_Helpers",
+	"A3_Characters_F_AoW"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=6;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Structures_F_Heli";
+			name="Arma 3 Helicopters - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Characters_F_AoW";
+			name="Arma 3 Art of War - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+dlcs[]=
+{
+	"Heli",
+	"AoW"
+};
+randomSeed=14645499;
+class ScenarioData
+{
+	author="Overlord Zorn";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=12;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15672.443,18.755516,17041.217};
+						angles[]={0.0026520467,1.8719765,6.272521};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						name="heli1D";
+					};
+					id=2;
+					type="B_Helipilot_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15672.445,20.534594,17041.232};
+						angles[]={0.0026520467,1.8719765,6.272521};
+					};
+					side="West";
+					class Attributes
+					{
+					};
+					id=3;
+					type="B_Helipilot_F";
+					atlOffset=1.779211;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=2;
+						item1=1;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=3;
+						item1=1;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=0;
+			atlOffset=-9.5367432e-005;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15065.813,18.370462,16431.256};
+				angles[]={0.0026520467,1.8719765,6.272521};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+				name="heli1";
+			};
+			id=1;
+			type="B_Heli_Light_01_F";
+			atlOffset=-9.5367432e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_MXC_F"",""FirstAidKit""],[2,2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[""B_Parachute""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15065.763,16.5919,16431.234};
+				angles[]={0.0026520467,1.8742337,6.272521};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="lz_start";
+			};
+			id=4;
+			type="Land_HelipadCircle_F";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15276.989,6.4464183,15940.213};
+				angles[]={0.045302324,0,6.2060056};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="lz_end";
+			};
+			id=5;
+			type="Land_HelipadCircle_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15122.458,40.574615,16421.441};
+				angles[]={0,1.8742231,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_1";
+			};
+			id=6;
+			type="Sign_Sphere100cm_F";
+			atlOffset=24.766842;
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15490.769,69.051567,16292.733};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_2";
+			};
+			id=7;
+			type="Sign_Sphere100cm_F";
+			atlOffset=50.25634;
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15495.306,74.633453,16285.565};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_3";
+			};
+			id=8;
+			type="Sign_Sphere100cm_F";
+			atlOffset=52.528603;
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15775.536,15.554506,16015.342};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_4";
+			};
+			id=9;
+			type="Sign_Sphere100cm_F";
+			atlOffset=11.444206;
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15696.96,24.766457,15925.834};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_5";
+			};
+			id=10;
+			type="Sign_Sphere100cm_F";
+			atlOffset=25.227875;
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15532.348,34.841541,16040.771};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_6";
+			};
+			id=11;
+			type="Sign_Sphere100cm_F";
+			atlOffset=24.765779;
+		};
+		class Item10
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15279.176,15.44473,16361.337};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=13;
+					type="B_Officer_Parade_F";
+					atlOffset=-5.9127808e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male04ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=12;
+			atlOffset=-5.9127808e-005;
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15320.186,31.224459,15935.154};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="wp_7";
+			};
+			id=14;
+			type="Sign_Sphere100cm_F";
+			atlOffset=24.766775;
+		};
+	};
+};
