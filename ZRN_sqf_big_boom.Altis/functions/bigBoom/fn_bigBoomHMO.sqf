@@ -1,4 +1,4 @@
-if (!hasInterface) then exitWith {};
+if (!hasInterface) exitWith {};
 
 params [
     ["_startTime", 0,           [0]         ],  // CBA_missionTime
