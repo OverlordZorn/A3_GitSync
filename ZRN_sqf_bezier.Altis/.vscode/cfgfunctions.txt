@@ -1,5 +1,4 @@
-class CfgFunctions
-{
+
 	class Zrn_HeliPath
 	{
 		class Zrn_HeliPath
@@ -7,7 +6,4 @@ class CfgFunctions
 			file = "Functions\Zrn_HeliPath";
 			class executeLocal {};
 			class previewPath {};
-//			class testing {	postInit = 1; };
 		};
-	};
-};
