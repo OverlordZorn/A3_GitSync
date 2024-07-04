@@ -71,7 +71,9 @@ enableCamShake true;
 // Camera Blur
 private _PP_dynamic = ppEffectCreate ["DynamicBlur",500];
 _PP_dynamic ppEffectEnable true;
-_PP_dynamic ppEffectAdjust [0.5];
+_PP_dynamic ppEffectAdjust [
+    linearConversion [200, 1500, _distance, 0.5, 0.05, true]
+];
 _PP_dynamic ppEffectCommit _duration/3;
 [{
     _this#0 ppEffectAdjust [0.0];
