@@ -6,7 +6,7 @@ if (count _return == 0) exitWith { missionNamespace setVariable ["ZRN_heliPath_w
 private _array = missionNamespace getVariable ["ZRN_heliPath_wpOBJ_Array", [] ];
 _array pushBack (_return#0);
 
-systemChat (["Currently Monitored:", count _array, _array] joinString " ");
+diag_log (["Currently Monitored:", count _array, _array] joinString " ");
 
 missionNamespace setVariable ["ZRN_heliPath_wpOBJ_Array", _array];
 missionNamespace setVariable ["ZRN_heliPath_totalSteps", (count _array -1) * 20];
@@ -54,11 +54,11 @@ private _delay = 1;
 
     if (_parameters call _condition) then {
         _parameters call _codeToRun;
-        systemChat "update";
+        diag_log "update";
     } else {
         _handle call CBA_fnc_removePerFrameHandler;
         _parameters call _exitCode;
-        systemChat "exit";
+        diag_log "exit";
     };
 }, _delay, [_codeToRun, _parameters, _exitCode, _condition]] call CBA_fnc_addPerFrameHandler;
 

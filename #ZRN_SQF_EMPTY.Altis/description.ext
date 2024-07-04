@@ -1,0 +1,45 @@
+/*Default Folder
+Mods: <ROOT>\Category\fn_functionName.sqf
+Mission: <ROOT>\Functions\Category\fn_functionName.sqf
+*/
+
+/*
+https://community.bistudio.com/wiki/Description.ext
+*/
+
+/* Default Header
+
+author			= "Varanon";
+onLoadName		= "Point Insertion";
+onLoadMission	= "A group of NATO soldiers is tasked with sabotaging a coastal defense.";
+loadScreen		= "images\loadScreen.paa";
+
+class Header
+{
+	gameType = "Coop";	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 10;	// maximum number of players the mission supports
+};
+*/
+
+
+class CfgFunctions
+{
+	class TAG
+	{
+//      tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
+		class Category
+		{
+/*			file = "My\Category\Path";
+			requiredAddons[] = { "A3_Data_F" }; // Optional requirements of CfgPatches classes. If some addons are missing, category functions will not be compiled.
+			class functionName
+                {
+                    preInit		= 1;
+                    postInit	= 1;
+                    preStart	= 1;
+                    recompile	= 1;
+    			};
+*/
+		};
+	};
+};

@@ -9,7 +9,7 @@ If the player opened it before and the cvo_virtual_arsenal exists already, it wi
 if (isNull cvo_virtual_arsenal) then { cvo_virtual_arsenal = ni;};
 
 if (isNil "cvo_virtual_arsenal") then {
-	systemChat "isNil/isNull check";
+	diag_log "isNil/isNull check";
 
 // Creates Virtual Arsenal box for the player locally if none has been existing before
 
