@@ -22,7 +22,7 @@ if (!isServer) exitWith {};
 // BOMB Variable
 private _bomb = bomb1;
 // duration of the event in secounds
-private _duration = 37;
+private _duration = 40;
 // NAME OF LAYER for roadblockage
 private _layerName = "HiddenRocks";
 // TIME OF DETONATION as single value: example: 06:30 -> 6.5 | 14:45 -> 14.75
@@ -35,7 +35,7 @@ private _numberOfBombs = 3;
 ///////////////////////////////////
 // CODE
 
-#define FNC_ROCKSLIDE ZRN_Rockslide_Params call ZRN_fnc_global_rockslide
+#define FNC_ROCKSLIDE ZRN_Rockslide_Params call ZRN_fnc_global_effects
 ZRN_ROCKSLIDE_DONE = false;
 
 if (is3DENPreview) then {diag_log "Post Init"};
@@ -79,9 +79,9 @@ _bomb addEventHandler ["Dammaged", {
 
 _condition = { dayTime > _this#0 };                 // condition - Needs to return bool
 _statement = {
+    if (is3DENPreview) then {diag_log "Time Trigger"};
     //_this#1 setDamage 1;
     deleteVehicle (_this#1);
-    if (is3DENPreview) then {diag_log "Time Trigger"};
 };                                    // Code to be executed once condition true
 _parameter = [_timeDetonation,_bomb];                        // arguments to be passed on -> _this;
 [_condition, _statement, _parameter] call CBA_fnc_waitUntilAndExecute;

@@ -19,14 +19,14 @@ if (is3DENPreview) then {diag_log "fnc local smoke"};
 
 private _tgtOBJ = createVehicleLocal ["Helper_Base_F", [0,0,0]];
 
-_posEnd set [2, _posEnd#2 + 2];
-_tgtOBJ setPosASL _posEnd;
+// _posEnd set [2, _posEnd#2 + 2];
+_tgtOBJ setPosASL _posStart;
 
 private _particleSource = createVehiclelocal ["#particlesource", ASLToAGL _posEnd];
 
 // PerFrameHandler
 private _startTime = CBA_missionTime;
-private _endTime = CBA_missionTime + _duration / 4;
+private _endTime = CBA_missionTime + _duration / 2;
 private _parameters = [_startTime, _endTime, _particleSource, _tgtOBJ, _posStart, _posEnd, _layerName, _duration];
 private _condition = { _this#1 > CBA_missionTime };
 private _exitCode = { [ { deleteVehicle (_this#0); deleteVehicle (_this#1); } , [_this#2,_this#3], 15] call CBA_fnc_waitAndExecute; };
@@ -43,7 +43,7 @@ private _codeToRun = {
         linearConversion [0,1,_progress,1,15,true],
         [0,0,1]
     ];
-    _particleSource setDropInterval linearConversion [0,1,_progress,0.01,0.001, true];
+    _particleSource setDropInterval linearConversion [0,1,_progress,0.1,0.001, true];
     _particleSource setParticleRandom [
         3,
         [
@@ -57,7 +57,7 @@ private _codeToRun = {
         "",
         "Billboard",
         1,
-        _duration,
+        20,
         [
             linearConversion [0,1,_progress,-1,-25,true],
             linearConversion [0,1,_progress,-1,-25,true],

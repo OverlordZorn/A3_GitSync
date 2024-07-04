@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=84;
+		nextID=85;
 	};
 	class LayerIndexProvider
 	{
@@ -16,25 +16,26 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9549.5625,37.782787,13614.927};
-		dir[]={-0.92481339,-0.37480941,-0.065102331};
-		up[]={-0.3738842,0.92710191,-0.026319616};
-		aside[]={-0.070221335,-1.8626451e-009,0.99753153};
+		pos[]={9303.7158,67.048149,13821.434};
+		dir[]={-0.67603451,-0.38413227,-0.62883687};
+		up[]={-0.28126535,0.92327702,-0.26162899};
+		aside[]={-0.68109107,1.5471596e-007,0.73221028};
 	};
 };
 binarizationWanted=0;
-sourceName="zrn_sqf_rockslide";
+sourceName="~zrn_sqf_rockslide";
 addons[]=
 {
 	"A3_Rocks_F_Exp_LavaStones",
 	"A3_Structures_F_EPA_Items_Food",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Rocks_F_Exp";
@@ -56,6 +57,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item3
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -66,6 +74,9 @@ randomSeed=2548226;
 class ScenarioData
 {
 	author="Overlord Zorn";
+};
+class CustomAttributes
+{
 };
 class Mission
 {
@@ -91,7 +102,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Layer";
@@ -1987,6 +1998,49 @@ class Mission
 			{
 			};
 			id=23;
+		};
+		class Item3
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9146.9795,60.401833,13597.376};
+				angles[]={0.3573091,0.24671894,6.0101762};
+			};
+			areaSize[]={33.517334,0,166.53516};
+			flags=1;
+			id=84;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };
