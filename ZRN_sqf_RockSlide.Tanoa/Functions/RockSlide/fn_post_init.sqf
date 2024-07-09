@@ -46,10 +46,16 @@ private _posStart = getPosASL _bomb;
 private _objects = getMissionLayerEntities _layerName select 0;
 private _posEnd = [];
 { _posEnd = _posEnd vectorAdd (getPosASL _x); } foreach _objects;
+
+{ _x hideObjectGlobal true } foreach _objects;
+
 _posEnd = _posEnd VectorMultiply (1/count _objects);
 
 
 ZRN_Rockslide_Params = [_posStart, _posEnd, _bomb, _duration, _layerName, _numberOfBombs];
+
+
+// just in case hide all object inside hiddenRocks
 
 
 ///////////////////////////////////
