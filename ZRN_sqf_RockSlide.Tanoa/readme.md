@@ -65,5 +65,7 @@ https://www.youtube.com/watch?v=Ec_w5YxQ5ug
     - Particles (in seperate files)
       - `fn_local_rocks.sqf`
       - `fn_local_smoke.sqf`
-
-
+- Partially inspired by `Alias' Rockslide` Script.
+  - particles are a direct copy.
+- Made with Dedicated Servers in mind!
+  - might have missed something though - feedback apprechiated!
