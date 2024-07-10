@@ -38,7 +38,9 @@ private _numberOfBombs = 3;
 #define FNC_ROCKSLIDE ZRN_Rockslide_Params call ZRN_fnc_global_effects
 ZRN_ROCKSLIDE_DONE = false;
 
+
 if (is3DENPreview) then {diag_log "Post Init"};
+
 
 private _posStart = getPosASL _bomb;
 
@@ -79,8 +81,9 @@ _bomb addEventHandler ["Dammaged", {
 
     _unit removeEventHandler [_thisEvent, _thisEventHandler];
 }];
+///////////////////////////////////
 
-
+///////////////////////////////////
 // destroys the Bomb when certain ingame point in time has reached
 
 _condition = { dayTime > _this#0 };                 // condition - Needs to return bool
