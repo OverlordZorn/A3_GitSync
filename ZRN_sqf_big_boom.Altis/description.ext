@@ -4,8 +4,10 @@ class CfgFunctions
 	{
 		class bigBoom
 		{
-			class bigBoomHMO {};
+			class post_init { postInit = 1; };
+
 			class bigBoomPrep {};
+			class bigBoomHMO {};
 		};
 	};
 };
