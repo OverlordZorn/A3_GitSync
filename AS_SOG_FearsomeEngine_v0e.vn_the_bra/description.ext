@@ -1,0 +1,195 @@
+class Header
+{
+	gameType =  Zeus;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 64;	// maximum number of players the mission supports
+};
+
+// Section 1
+author= "Kyoptic [Antistasi Event Team]"; // Name of the creator(s)
+OnLoadName = "FEARSOME ENGINE"; // Mission name in the loading screen, keep it short without operation
+OnLoadMission = "Powered by ArmaHosts"; // Bottom of the loading screen, don't change
+loadScreen = "Images\image.jpg"; // The picture displayed during loading screen
+overviewPicture = "Images\image.jpg"; // The picture displayed in the mission selection screen
+briefingName = "OPERATION FEARSOME ENGINE"; // The Mission name displayed in the mission selection menu
+overviewText = "A platoon of USMC investigates HUMINT which has provided the location of NVA weapons caches."; // The text above the picture in the mission selection menu
+
+// Section 2
+respawn = 3; // Sets respawn type, current is BASE
+respawnOnStart = 0; // (Disabled) Respawn player when he joins the game. Available only for INSTANT and BASE respawn types
+respawnDelay = 99999; // Sets respawn time for players
+respawnVehicleDelay = 99999;// Sets respawn time for vehicles
+respawnButton = 1; // 0: disabled  1: enabled. Default: 1
+respawnTemplates[] = {"ace_spectator"}; //Sets the spectator type once a person is dead, delete if no spectator needed
+respawnDialog = 0; // Show the scoreboard and respawn countdown timer for a player if he is killed with respawn type 3
+enableDebugConsole = 1; // Sets debug consol to logged in admin
+aiKills = 0; // Does not add AI to the scoreboard
+disabledAI = 1; //Disables AI in lobby slots
+allowFunctionsLog = 1;
+
+class CfgFunctions {
+    #include "functions.hpp"
+	
+	class ZRN
+	{
+		class bigBoom
+		{
+			class bigBoomInit { postInit = 1; };
+			class bigBoomHMO {};
+			class bigBoomPrep {};
+		};
+	};
+};
+
+class CfgSounds
+{
+ sounds[] = {};
+ class	WhistleCharge
+ {
+  name = "WhistleCharge";
+  sound[] = {"sound\WhistleCharge.ogg", db+10.0,1.0};
+  titles[] = {};
+ };
+  class	HelloVietnam
+ {
+  name = "HelloVietnam";
+  sound[] = {"sound\HelloVietnam.ogg", db+10.0,1.0};
+  titles[] = {};
+ };
+};
+
+// class CfgMusic
+// {
+ // music[] = {};
+ // class	HelloVietnam
+ // {
+  // name = "HelloVietnam";
+  // sound[] = {"sound\HelloVietnam.ogg", db+4.0,1.0};
+  // titles[] = {};
+ // };
+// };
+
+#define ARVN_FORCES  items[] = \
+{ \
+    "vn_m16_20_t_mag", 20, \
+    "vn_m16_20_mag", 60, \
+    "vn_m60_100_mag", 10, \
+    "vn_m1911_mag", 10, \
+    "vn_m72", 2, \
+    "vn_m72_mag", 2, \
+\
+    "vn_40mm_m406_he_mag", 20, \
+    "vn_40mm_m397_ab_mag", 5, \
+    "vn_40mm_m651_cs_mag", 2, \
+    "vn_40mm_m682_smoke_r_mag", 5, \
+\
+    "vn_m67_grenade_mag", 10, \
+    "vn_m18_white_mag", 30, \
+    "vn_m18_purple_mag", 30, \
+    "vn_m18_red_mag", 30, \
+	"vn_mine_satchel_remote_02_mag", 2, \
+};
+
+class vn_artillery_settings
+{
+    // Add your NUMBER variable that will be used as a cost variable - leave empty if you don't want the cost to matter.
+    cost_variable = "";
+    // Array - { Always available, `radio_backpacks`, `radio_vehicles`, `player_types`, "vn_artillery" unit trait}
+    // Make the first true for the radio to be always avaliable
+    availability[] = {0, 0, 0, 0, 1};
+    // If enabled the "vn_artillery" unit trait is always required to use the radio support, additionaly to `availability` settings.
+    unit_trait_required = 1;
+    // Distance from the edge of a blacklisted marker that a artillery/aircraft cannot be called in.
+    danger_distance = 150;
+    // Maximum delay for the support to arrive, regardless of the time calculated from distance to support module.
+    delay_max = 20;
+    // Determines if the support planes/helicopters will be set to captive.
+    captive = 1;
+
+    radio_backpacks[] = {"B_simc_rajio_Frem_2"};
+
+    class resupply
+    {
+        class ammo
+        {
+            displayname = $STR_VN_ARTILLERY_RESUPPLY_AMMO_NAME;
+            class thandieu
+            {
+                displayname = $STR_VN_ARTILLERY_THANDIEU_NAME;
+                //icon = "vn\ui_f_vietnam\data\decals\";
+                description = "A crate containing extra ammunition";
+                vehicleclass = "vn_b_air_uh1d_02_04";
+                containerclass = "vn_b_ammobox_06";
+                ARVN_FORCES
+                cost = 0;
+            };
+        };
+    };
+	class artillery
+	{
+		class wp
+		{
+			displayname = $STR_VN_ARTILLERY_ARTILLERY_WP_WP_NAME;
+			class baker_2
+			{
+					displayname = $STR_VN_ARTILLERY_ARTILLERY_WP_BAKER_2_NAME;
+					icon = "vn\ui_f_vietnam\data\decals\vn_callsign_src_l176_ca.paa";
+					description = $STR_VN_ARTILLERY_ARTILLERY_WP_BAKER_2_DESCRIPTION;
+					ammo[] = {"vn_shell_105mm_m60_wp_ammo","vn_shell_105mm_m60_wp_ammo","vn_shell_105mm_m60_wp_ammo","vn_shell_105mm_m60_wp_ammo"};
+					allow_double = 1;
+					cooldown = (60*10);
+					divergence = 50;
+					count = 2;
+					cost = 0;
+			};
+		};
+		class he
+		{
+			displayname = $STR_VN_ARTILLERY_ARTILLERY_HE_HE_NAME;
+			class baker_3
+			{
+					displayname = $STR_VN_ARTILLERY_ARTILLERY_HE_BAKER_3_NAME;
+					icon = "vn\ui_f_vietnam\data\decals\vn_callsign_src_l176_ca.paa";
+					description = $STR_VN_ARTILLERY_ARTILLERY_HE_BAKER_3_DESCRIPTION;
+					ammo[] = {"vn_shell_105mm_m1_he_ammo","vn_shell_105mm_m1_he_ammo","vn_shell_105mm_m1_he_ammo","vn_shell_105mm_m1_he_ammo"};
+					allow_double = 1;
+					cooldown = (60*10);
+					divergence = 50;
+					count = 2;
+					cost = 0;
+			};
+		};
+		class frag
+		{
+			displayname = $STR_VN_ARTILLERY_ARTILLERY_FRAG_FRAG_NAME;
+			class baker_5
+			{
+					displayname = $STR_VN_ARTILLERY_ARTILLERY_FRAG_BAKER_5_NAME;
+					icon = "vn\ui_f_vietnam\data\decals\vn_callsign_src_l176_ca.paa";
+					description = $STR_VN_ARTILLERY_ARTILLERY_FRAG_BAKER_5_DESCRIPTION;
+					ammo[] = {"vn_shell_105mm_m546_frag_ammo","vn_shell_105mm_m546_frag_ammo","vn_shell_105mm_m546_frag_ammo","vn_shell_105mm_m546_frag_ammo"};
+					allow_double = 1;
+					cooldown = (60*10);
+					divergence = 50;
+					count = 2;
+					cost = 0;
+			};
+		};
+		class airburst
+		{
+			displayname = $STR_VN_ARTILLERY_ARTILLERY_AIRBURST_AIRBURST_NAME;
+			class baker_6
+			{
+					displayname = $STR_VN_ARTILLERY_ARTILLERY_AIRBURST_BAKER_6_NAME;
+					icon = "vn\ui_f_vietnam\data\decals\vn_callsign_src_l176_ca.paa";
+					description = $STR_VN_ARTILLERY_ARTILLERY_AIRBURST_BAKER_6_DESCRIPTION;
+					ammo[] = {"vn_shell_105mm_m1_ab_ammo","vn_shell_105mm_m1_ab_ammo","vn_shell_105mm_m1_ab_ammo","vn_shell_105mm_m1_ab_ammo"};
+					allow_double = 1;
+					cooldown = (60*10);
+					divergence = 50;
+					count = 2;
+					cost = 0;
+			};
+		};
+	};
+};
