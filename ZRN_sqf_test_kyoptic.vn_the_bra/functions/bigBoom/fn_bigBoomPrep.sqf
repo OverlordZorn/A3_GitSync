@@ -1,16 +1,33 @@
 params [
-    ["_target",     objNull,    [objNull]   ]
+    ["_target",     objNull,    [objNull]   ],
+    ["_useCerealBox", true,    [true]       ],
+    ["_useThreshhold", false,    [true]     ]
 ];
 
 if (!isServer) exitWith {};
 diag_log "[CVO](debug)(fn_bigBoomPrep) INIT";
 
-private _HandlerID = _target addEventHandler ["Dammaged", {
-    params ["_vehicle", "_selection", "_damage", "_hitIndex", "_hitPoint", "_shooter", "_projectile"];
 
-    diag_log format ['[CVO](debug)(fn_bigBoomPrep) _vehicle: %1 - _damage: %2 - _shooter: %3', _vehicle , _damage ,_shooter];
+diag_log format ['[CVO](debug)(fn_bigBoomPrep) _this: %1', _target];
 
-    if (_damage < 0.1) exitWith {};
+if (_useCerealBox) then {
+    private _pos = [getPos _target#0, getPos _target#1,getPos _target#2 + 1];
+    private _box = createVehicleLocal ["Land_CerealsBox_F",_pos, [], 0, "CAN_COLLIDE"];
+    _box hideObject true;
+    _box attachTo [_target,[0,0,1]];
+    _box enableDynamicSimulation false;
+    _box enableSimulation true;
+    _target = _box;
+    
+};
+
+private _HandlerID = _target addEventHandler ["Explosion", { 
+    params ["_vehicle", "_damage", "_source"]; 
+
+
+    diag_log format ['[CVO](debug)(fn_bigBoomPrep) _vehicle: %1 - _damage: %2 - _source: %3', _vehicle , _damage ,_source];
+
+    // if (_damage < 0.1) exitWith {};
 
     
     // creates helper object which can be deleted by zeus to stop the effects
@@ -28,7 +45,7 @@ private _HandlerID = _target addEventHandler ["Dammaged", {
         params ["_vehicle", "_helper"];
         createVehicle ["Bo_GBU12_LGB", getPos _vehicle]; // Spawn bomb once globally
         [CBA_missionTime, _vehicle, _helper] remoteExecCall ["ZRN_fnc_bigBoomHMO", [0,-2] select isDedicated,_helper];
-    }, [_vehicle,_helper], random 3] call CBA_fnc_waitAndExecute;
+    }, [_vehicle,_helper], random 1] call CBA_fnc_waitAndExecute;
 
     _vehicle removeEventHandler [_thisEvent, _thisEventHandler];
 }];

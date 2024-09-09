@@ -54,6 +54,7 @@ private _posEnd = [];
 _posEnd = _posEnd VectorMultiply (1/count _objects);
 
 
+
 ZRN_Rockslide_Params = [_posStart, _posEnd, _bomb, _duration, _layerName, _numberOfBombs];
 
 

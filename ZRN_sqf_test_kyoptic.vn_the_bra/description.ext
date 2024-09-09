@@ -1,0 +1,11 @@
+class CfgFunctions {
+	class ZRN
+	{
+		class bigBoom
+		{
+			class bigBoomInit { postInit = 1; };
+			class bigBoomHMO {};
+			class bigBoomPrep {};
+		};
+	};
+};
