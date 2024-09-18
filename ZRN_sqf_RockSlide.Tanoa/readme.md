@@ -19,40 +19,37 @@ https://www.youtube.com/watch?v=Ec_w5YxQ5ug
 
 
 ## How to Import
-1. Copy the following files into your mission
-   - sound_landslide.ogg
-   - The whole Functions Folder and its content
+1. Copy the `rockslide` folder into your missionfolder
 
-2. Merge `CfgFunctions` from the `Description.ext` into your Mission's `description.ext`
+2. Merge `CfgFunctions` from the `description.ext` into your Mission's `description.ext`
    
-3. Open `Functions\Rockslide\fn_post_init.sqf`
-   - move to Define Section:
-     - `_bomb`:
-       - object where the explosions gonna be spawned.
-       - the landslide will start from here.
-       - will be deleted once the landslide event starts.
-     - `_duration`:
-       - duration of the landslide event.
-       - Currently based on length of `sound_landslide.ogg`
-     - `_layerName`:
-       - 3den Editor Layer Name for the debries caused of the landslide.
-       - Will be unhidden during the landslide.
-       - Centerposition of all objects will define the endpoint of the landslide.
-     - `_timeDetonation`:
-       - Time of the day at which the explosion gonna occour to that will trigger the landslide.
-       - Example: `7.25` => `07:15`
-       - wont work if mission starts before midnight and Detonation occours after midnight.
-     - `_numberOfBombs`: 
-       - Amount of explosions (gbu-12) that occour randomly during the first 2 secounds.
+3. Open `\Rockslide\functions\fn_define.sqf` to adjust if needed
+
+## How to use
+1. create an object (for example: box of cereal) to define the start pos of the rockslide. Explosions will happen here.
+2. create a layer in the editor and define a name, like `ROCKSLIDE`. Fill this layer with object that shall be revealed during the rockslide event.
+
+3. Open `\Rockslide\functions\fn_define.sqf` and add a function call per landslide event.
+
+Parameters:
+- StartObject: Where the rockslide will start.
+- layername: the name of the editor layer
+- numBombs: the amount of explosions at the start of the rockslide
+- duration: the time it will take for the rockslide effect spawners to go from start position to end position.
+- _recieveDmg: if damage on the startObject shall trigger the landslide.
+
+## How to trigger the event
+There are multiple ways to trigger/start the rockslide event.
+1. Use Zeus to delete the StartObject
+2. `zrn_rockslide_fnc_prep` will monitor and wait for a global variable to be set to `true`. the name will be generated based on the layername, for example:
+`Layername: "ROCKSLIDE"` -> `TriggerVariable: "ROCKSLIDE_trigger"`
+`Layername: "ROCKSLIDE 02"` -> `TriggerVariable: "ROCKSLIDE_02_trigger"`
+3. (optional, based on _recieveDmg) Tell the players to damage the startObject. If the damage recieved on the certain object exceeds 0.1, it will trigger the rockslide event.
+
+The functions returns the trigger-variablename as a string, but it will also be logged in the rpt and, when in the editor, will be displayed in systemChat.
 
 
 ## Other Notes
-- `_bomb`
-  - when this object gets damaged (>0.1), it will trigger the landslide
-  - when this object gets deleted, (for exapmle, by zeus to manually trigger it), it will start the landslide
-- `fn_post_init.sqf`
-  - handles  the eventhandlers and sets everything up
-  - has the `post_init` flag in CfgFunctions, meaning it will get executed at the beginning of the mission.
 - `fn_global_effects.sqf`
   - handles all global effects
     - Explosions
