@@ -1,14 +1,3 @@
-class CfgFunctions
-{
-	class ZRN
-	{
-		class RockSlide
-		{
-			class post_init { postInit = 1; };
-			class global_effects {};
-			class local_effects {};
-			class local_smoke {};
-			class local_rocks {};
-		};
-	};
+class CfgFunctions {
+    #include "rockslide\CfgFunctions.hpp"
 };

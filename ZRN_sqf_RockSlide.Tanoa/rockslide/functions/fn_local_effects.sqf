@@ -13,12 +13,14 @@
 * Public: Yes
 */
 
+if !(hasInterface) exitWith {};
+
 params ["_posStart", "_posEnd", "_bomb", "_duration", "_layerName", "_numberOfBombs"];
 
 if (is3DENPreview) then {diag_log "fnc local"};
 
-_this call ZRN_fnc_local_rocks;
-_this call ZRN_fnc_local_smoke;
+_this call ZRN_rockslide_fnc_local_rocks;
+_this call ZRN_rockslide_fnc_local_smoke;
 
 private _distance = player distance _posEnd;
 

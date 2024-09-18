@@ -13,6 +13,8 @@
 * Public: Yes
 */
 
+// if (true) exitWith {};
+
 params ["_posStart", "_posEnd", "_bomb", "_duration", "_layerName", "_numberOfBombs"];
 
 if (is3DENPreview) then {diag_log "fnc local smoke"};
@@ -43,37 +45,49 @@ private _codeToRun = {
         linearConversion [0,1,_progress,1,15,true],
         [0,0,1]
     ];
-    _particleSource setDropInterval linearConversion [0,1,_progress,0.1,0.001, true];
+    _particleSource setDropInterval linearConversion [0,1,_progress,0.01,0.001, true];
     _particleSource setParticleRandom [
-        3,
+        3, // lifetime
         [
+            linearConversion [0,1,_progress,2,50,true], 
             linearConversion [0,1,_progress,2,50,true],
-            linearConversion [0,1,_progress,2,50,true],
-            2
-        ],[2,2,1],1,0,[0,0,0,0.01],0,0];
+            linearConversion [0,1,_progress,0,2,true]
+        ], // posVar
+        [
+            linearConversion [0,1,_progress,0,2,true],
+            linearConversion [0,1,_progress,0,2,true],
+            linearConversion [0,1,_progress,0,2,true]
+        ], // moveV Var
+        1, // rotationV var
+        0, // sizeVar
+        [0,0,0,0.01],0,0];
 
     _particleSource setParticleParams [
         ["\A3\data_f\cl_basic",1,0,1],
         "",
         "Billboard",
         1,
-        20,
+        40,
         [
             linearConversion [0,1,_progress,-1,-25,true],
             linearConversion [0,1,_progress,-1,-25,true],
-            0
-        ],
-        [-1,-1,1],
-        3,
-        10,
-        7.9,
-        0.075,
-        [2,20],
+            1
+        ],          // pos
         [
-            [0.05,0.05,0.05,0.5],
+            -1,
+            -1,
+            linearConversion [0,1,_progress,1,3,true]
+        ], //move
+        3,          // rotationV
+        10.5,       // weight (prev 10)
+        7.9,        // volume
+        0.075,      // rubbing
+        [2,20],     // sizeOverTime
+        [
+            [0.05,0.05,0.05,0.1],
             [0.2,0.2,0.2,0.25],
             [0.5,0.5,0.5,0]
-        ],
+        ], // color
         [0.08],
         1,
         0,
