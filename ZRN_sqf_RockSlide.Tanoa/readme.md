@@ -23,7 +23,9 @@ https://www.youtube.com/watch?v=Ec_w5YxQ5ug
 
 2. Merge `CfgFunctions` from the `description.ext` into your Mission's `description.ext`
    
-3. Open `\Rockslide\functions\fn_define.sqf` to adjust if needed
+3. Open `\Rockslide\functions\fn_define.sqf` to adjust if needed.
+Default Layername: `ROCKSLIDE`
+Default StartObject Variable Name: `rockslide_start`
 
 ## How to use
 1. create an object (for example: box of cereal) to define the start pos of the rockslide. Explosions will happen here.
