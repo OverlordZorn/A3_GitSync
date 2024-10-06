@@ -31,16 +31,19 @@ if (_aircraft isEqualTo objNull) exitWith {false};
 if (damage _aircraft == 1) exitWith {false};
 
 
-
+#define MIN_ALTITUDE 35
 
 private _posAircraft = getPosASL _aircraft;
-private _offsetZ = boundingBoxReal _aircraft select 1 select 2;
+private _boundingBox = boundingBoxReal _aircraft;
+private _offsetZ = _boundingBox select 1 select 2;
+private _offsetY = _boundingBox select 1 select 1;
 
-private _spawnPos = [
-    _posAircraft # 0,
-    _posAircraft # 1,
-    _posAircraft # 2 - _offsetZ;
-];
+
+private _spawnPos = if ((_posAircraft # 2 - _offsetZ) > MIN_ALTITUDE) then {
+    [ _posAircraft # 0, _posAircraft # 1, _posAircraft # 2 - _offsetZ ]
+} else {
+    _aircraft getRelPos [_offsetY, 180]
+};
 
 private _chute = createVehicle [_parachuteClass, [0,0,100], [], 0, "CAN_COLLIDE"];
 _chute setPosASL _spawnPos;
@@ -58,5 +61,11 @@ if (_attachStrobe) then {
     [ {	isTouchingGround _this#1 }, { deleteVehicle _this#0 }, [_strobe, _box] ] call CBA_fnc_waitUntilAndExecute;
 };
 
-// Detaches the box from the parachute once its close to the ground
-[ {	( getPos _this #2)<1 }, { detach _this }, _box, 300] call CBA_fnc_waitUntilAndExecute;
+// Detaches the box from the parachute once its close to the ground or deleted
+[{
+    isNull _this || 
+    { ( getPos _this #2 ) <1 }
+}, {
+    if (isNull _this) exitWith {};
+    detach _this
+}, _box, 300] call CBA_fnc_waitUntilAndExecute;
