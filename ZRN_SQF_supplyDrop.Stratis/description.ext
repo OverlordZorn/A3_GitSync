@@ -1,0 +1,43 @@
+/*Default Folder
+Mods: <ROOT>\Category\fn_functionName.sqf
+Mission: <ROOT>\Functions\Category\fn_functionName.sqf
+*/
+
+/*
+https://community.bistudio.com/wiki/Description.ext
+*/
+
+/* Default Header
+
+author			= "Varanon";
+onLoadName		= "Point Insertion";
+onLoadMission	= "A group of NATO soldiers is tasked with sabotaging a coastal defense.";
+loadScreen		= "images\loadScreen.paa";
+
+class Header
+{
+	gameType = "Coop";	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 10;	// maximum number of players the mission supports
+};
+*/
+
+
+class CfgFunctions
+{
+	class ZRN_supplyDrop
+	{
+//      tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
+		class supplyDrop
+		{
+			//file = "My\Category\Path";
+
+            class register {};
+
+            class createAircraft {};
+
+            class createCrate {};
+			class fillCrate {};
+		};
+	};
+};
