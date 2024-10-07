@@ -18,6 +18,7 @@
 
 if !(isServer) exitWith {false};
 
+diag_log "[CVO](debug)(fn_dropCrate) Start";
 
 params [
     ["_aircraft",       objNull,               [objNull]   ],
@@ -69,3 +70,5 @@ if (_attachStrobe) then {
     if (isNull _this) exitWith {};
     detach _this
 }, _box, 300] call CBA_fnc_waitUntilAndExecute;
+
+diag_log "[CVO](debug)(fn_dropCrate) End";

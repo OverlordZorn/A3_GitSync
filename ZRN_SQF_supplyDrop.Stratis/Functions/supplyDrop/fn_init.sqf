@@ -14,20 +14,10 @@
 */
 
 
-// CBA Custom Events
-private _cba_EH_ID = missionNamespace getVariable ["ZRN_supplyDrop_EH_ID_dispatch", "404"];
-private _hashmap = missionNamespace getVariable ["ZRN_supplyDrop_catalog", "404"];
-
-if (_cba_EH_ID isEqualTo "404") then {
-    private _id = ["ZRN_supplyDrop_EH_dispatch", ZRN_supplyDrop_fnc_dispatch] call CBA_fnc_addEventHandler;
-    missionNamespace setVariable ["ZRN_supplyDrop_EH_ID_dispatch", _id];
-};
+["ZRN_supplyDrop_EH_dispatch", ZRN_supplyDrop_fnc_dispatchAircraft] call CBA_fnc_addEventHandler;
 
 
-// hashmap
 
-if (_hashmap isEqualTo "404") then { _hashmap = createHashMap };
-missionNamespace setVariable ["ZRN_supplyDrop_catalog", _hashmap];
+// For testing purpose
 
-
-_hashMap
+["Test"] call zrn_supplydrop_fnc_register;

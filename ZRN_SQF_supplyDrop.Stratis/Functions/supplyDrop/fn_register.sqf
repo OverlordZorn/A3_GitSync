@@ -20,9 +20,6 @@ params [
     ["_items",          [],                         [[]]                ],
     ["_backpacks",      [],                         [[]]                ],
 
-    ["_boxClass",       "IG_supplyCrate_F",         [""]                ],
-    ["_airClass",       "C_Heli_Light_01_civil_F",  [""]                ],
-
     ["_params",         "404",                      [createHashMap]     ]
 
 //    ["_start",          [0,0,0],                    [[]],       [2,3]   ],
@@ -35,14 +32,25 @@ params [
 ];
 
 
-private _catalog = [] call zrn_supplyDrop_fnc_init;
+// hashmap
 
-if (_name in _catalog) exitWith { diag_log "SupplyDrop with this Name already exists"; false };
+private _catalog = missionNamespace getVariable ["ZRN_supplyDrop_catalog", "404"];
+
+if (_catalog isEqualTo "404") then {
+    
+    diag_log "[CVO](debug)(fn_register) Init Catalog";
+    _catalog = createHashMap;
+    missionNamespace setVariable ["ZRN_supplyDrop_catalog", _catalog];
+
+    [] call zrn_supplyDrop_fnc_createZeusInteraction;
+};
+
+if (_name in _catalog) exitWith { "SupplyDrop with this Name already exists" };
 
 private _entry = createHashMapFromArray [
 
     ["Name",            _name],
-    ["pos_start",       _start],
+    ["pos_start",       [0,0,0]],
 
     ["targetMode",      "MAP"],
 
@@ -59,9 +67,13 @@ private _entry = createHashMapFromArray [
 
     ["isProtected",     false],
     ["emptyBox",        true],
-    ["_attachStrobe",   false]
+    ["attachStrobe",   false]
 ];
 
 if (_params isNotEqualTo "404") then { _entry merge [_params, true] };
 
 _catalog set [_name, _entry];
+
+diag_log format ['[CVO](debug)(fn_register) keys _catalog: %1', keys _catalog];
+
+true

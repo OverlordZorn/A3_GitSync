@@ -1,9 +1,0 @@
-
-	class Zrn_HeliPath
-	{
-		class Zrn_HeliPath
-		{
-			file = "Functions\Zrn_HeliPath";
-			class executeLocal {};
-			class previewPath {};
-		};
