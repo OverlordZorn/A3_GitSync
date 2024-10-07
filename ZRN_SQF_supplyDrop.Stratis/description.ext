@@ -27,16 +27,19 @@ class CfgFunctions
 {
 	class ZRN_supplyDrop
 	{
-//      tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
+        // tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
 		class supplyDrop
 		{
 			//file = "My\Category\Path";
+
+            class init {};
+            class createZeusInteraction {};
 
             class register {};
 
             class dispatchAircraft {};
 
-            class createCrate {};
+            class dropCrate {};
 			class fillCrate {};
 		};
 	};

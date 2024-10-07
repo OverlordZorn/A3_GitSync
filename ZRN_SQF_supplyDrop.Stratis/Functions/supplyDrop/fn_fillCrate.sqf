@@ -26,7 +26,6 @@ params [
 ];
 
 if (_box isEqualTo objNull) exitWith {false};
-if (count _items + count _backpacks == 0) exitWith {false};
 
 if (_clearBox) then {
     clearBackpackCargoGlobal _box;
@@ -35,15 +34,12 @@ if (_clearBox) then {
     clearItemCargoGlobal _box;
 };
 
-// Fills the Box with anything in the array that isnt a backpack
-{
-	_box addItemCargoGlobal [_x # 0, _x # 1]
-} forEach _items;
+if (count _items + count _backpacks == 0) exitWith {true};
 
+// Fills the Box with anything in the array that isnt a backpack
+{	_box addItemCargoGlobal [_x # 0, _x # 1] } forEach _items;
 
 // Fills the Box with with backpacks
-{
-	_box addBackpackCargoGlobal [_x # 0, _x # 1]
-} forEach _backpacks;
+{ _box addBackpackCargoGlobal [_x # 0, _x # 1] } forEach _backpacks;
 
 true

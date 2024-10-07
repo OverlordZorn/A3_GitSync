@@ -15,14 +15,25 @@
 
 if !(isServer) exitWith {false};
 
+
 params [
-    ["_startPos",       [0,0,0],    [[]],   [2,3]   ],
-    ["_airClass",       "",         [""]            ],
-    ["_targetPos",      [0,0,0],    [[]],   [2,3]   ],
-    ["_isProtected",    false,      [true]          ],
-    ["_side",           CIVILIAN,   [west]          ],
-    ["_endPos",         "RETURN",   ["", []], [2,3] ]
+    ["_entryName",  "",     [""]]
 ];
+
+/*
+params [
+    ["_startPos",       [0,0,0],                [[]],       [2,3]   ],
+    ["_airClass",       "",                     [""]                ],
+    ["_targetPos",      [0,0,0],                [[]],       [2,3]   ],
+    ["_isProtected",    false,                  [true]              ],
+    ["_side",           CIVILIAN,               [west]              ],
+    ["_endPos",         "RETURN",               ["", []],   [2,3]   ],
+    ["_crateClass",     "B_supplyCrate_F",      [""]                ],
+    ["_paraClass",      "B_Parachute_02_F",     [""]                ],
+    ["_content",        [[],[],true],           [[]],       [3]     ],
+    ["_attachStrobe",   false,                  [true]              ]
+];
+*/
 
 private _aircraft = createVehicle [_airClass, [0,0,0], [], 0, "FLY"];
 
@@ -34,9 +45,7 @@ private _dir = (_startPos getDir _targetPos);
 _aircraft setPosASL _startPos;
 _aircraft setDir _dir;
 
-if (_isProtected) then {
-    { _x allowDamage false; } forEach [_aircraft] + crew _aircraft;
-};
+if (_isProtected) then { { _x allowDamage false; } forEach [_aircraft] + crew _aircraft; };
 
 
 _grp addWaypoint [_targetPos, 25];
@@ -49,16 +58,32 @@ _endPos = switch (true) do {
     default { [0,0,0] };
 };
 
-
 _grp AddWaypoint [_endPos, 100];
 
-
+// WUAE - Delete Aircraft 
 // condition - Needs to return bool
-_condition = { isNull _this#0 || { damage _this#0 == 1 || { _this#0 distance2D _this#1} } };
+private _condition = { isNull _this#0 || { damage _this#0 == 1 || { (_this#0 distance2D _this#1) < 50 } } };
 
 // Code to be executed once condition true
-_statement = {};                
-_parameter = [_aircraft, _endPos];                // arguments to be passed on -> _this
-_timeout = -1;                  // if condition isnt true within this time in S, _timecode will be executed.
-_timeoutCode = {};              // code to be executed if timeout
-[_condition, _statement, _parameter, _timeout,_timeoutCode] call CBA_fnc_waitUntilAndExecute;
+private _statement = {
+    if (isNull _this#0) exitWith {};
+    deleteVehicleCrew _this#0;
+    deleteVehicle _this#0;
+};
+
+[_condition, _statement, [_aircraft, _endPos], 600 ,_statement] call CBA_fnc_waitUntilAndExecute;
+
+
+// WUAE - Drop Crate 
+// condition - Needs to return bool
+private _condition = { isNull _this#0 || { damage _this#0 == 1 || { (_this#0 distance2D _this#1) < 50 } } };
+
+// Code to be executed once condition true
+private _statement = {
+    if (isNull _this#0) exitWith {};
+    if (damage _this#0 == 1) exitWith {};
+
+    [_this#0, _this#2, _this#3, _this#4, _this#5 ] call zrn_supplydrop_fnc_dropCrate;
+};
+
+[_condition, _statement, [_aircraft, _targetPos, _crateClass, _paraClass, _content, _attachStrobe], 600 ,{}] call CBA_fnc_waitUntilAndExecute;

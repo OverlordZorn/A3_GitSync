@@ -20,11 +20,11 @@ if !(isServer) exitWith {false};
 
 
 params [
-    ["_aircraft",        objNull,               [objNull]   ],
-    ["_crateClass",      [],                    [""]        ],
-    ["_parachuteClass",  "B_Parachute_02_F",    [""]        ],
-    ["_content",         [[],[],true],          [[]],   [3] ],
-    ["_attachStrobe",    false,                 [false]     ]
+    ["_aircraft",       objNull,               [objNull]   ],
+    ["_crateClass",     [],                    [""]        ],
+    ["_paraClass",      "B_Parachute_02_F",    [""]        ],
+    ["_content",        [[],[],true],          [[]],   [3] ],
+    ["_attachStrobe",   false,                 [false]     ]
 ];
 
 if (_aircraft isEqualTo objNull) exitWith {false};
@@ -45,7 +45,7 @@ private _spawnPos = if ((_posAircraft # 2 - _offsetZ) > MIN_ALTITUDE) then {
     _aircraft getRelPos [_offsetY, 180]
 };
 
-private _chute = createVehicle [_parachuteClass, [0,0,100], [], 0, "CAN_COLLIDE"];
+private _chute = createVehicle [_paraClass, [0,0,100], [], 0, "CAN_COLLIDE"];
 _chute setPosASL _spawnPos;
 
 private _box = createVehicle [_crateClass, [0,0,0]];
