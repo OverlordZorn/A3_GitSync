@@ -29,6 +29,7 @@ if (_entry isEqualTo "404") then {
         ["targetMode",      "MAP"],
 
         ["pos_target",      [0,0,0]],
+        ["pos_end",         "RETURN"],
 
         ["drop_alt",        100],
         ["drop_alt_forced", true],

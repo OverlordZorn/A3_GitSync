@@ -46,6 +46,7 @@ _aircraft flyInHeightASL [25, 25, 25];
 private _grp = (_entry get "side") createVehicleCrew _aircraft;
 _grp addVehicle _aircraft;
 _grp setCombatBehaviour "CARELESS";
+_grp deleteGroupWhenEmpty true;
 
 //  Manage ACE HC Blacklist
 [[_aircraft] + units _grp, true] call ace_headless_fnc_blacklist;
@@ -63,6 +64,8 @@ if (_entry get "isProtected") then { { _x allowDamage false; } forEach [_aircraf
 // Provide Waypoints
 _grp addWaypoint [_targetPos, 25];
 _grp addWaypoint [_targetPos getPos [250, _dir], 25];
+
+private _endpos = _entry get "pos_end";
 
 _endPos = switch true do {
     case (_endPos isEqualTo "RETURN"):   { _startPos };
