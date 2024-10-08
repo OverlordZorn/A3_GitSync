@@ -26,7 +26,7 @@ if (_entry isEqualTo "404") then {
         ["Name",            ""],
         ["pos_start",       [0,0,0]],
 
-        ["targetMode",      "MAP"],
+        ["targetMode",      "MAPCLICK"],
 
         ["pos_target",      [0,0,0]],
         ["pos_end",         "RETURN"],
