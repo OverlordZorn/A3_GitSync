@@ -5,32 +5,23 @@
 *
 * Arguments:
 *
-* Return Value:
-* 0 - <STRING>           "Monkey Supply Crate"          name of the Supplydrop
-*
-* 1 - <Nested Array>    ["ace_banana", 69]              Nested Array of Items to be filled into the crate
-* 2 - <Nested Array>    ["ace_banana", 69]              Nested Array of Backpacks to be filled into the crate
-*
-* 3 - <hashMap>         hashmap of additional parameters
+* 0 - <STRING>           "Monkey Supply Crate"              Name of the Supplydrop
+* 1 - <Nested Array>    [["ace_banana", 69]]                Nested Array of Items to be filled into the crate
+* 2 - <Nested Array>    [["ace_banana", 69]]                Nested Array of Backpacks to be filled into the crate
+* 3 - <hashMap>         hashmap of additional parameters    Reference fn_defaultEntry.sqf for possible entries.
 *
 * Example:
-* ['something', player] call cvo_fnc_sth
 *
 * Public: Yes
 */
 
 params [
-    ["_name",           "Default",           [""]                ],
-
-    ["_items",          [],                [[]]                  ],
-    ["_backpacks",      [],                [[]]                  ],
-
-    ["_params",         "404",               [createHashMap]     ]
-
+    ["_name",           "Default",          [""]                ],
+    ["_items",          [],                 [[]]                ],
+    ["_backpacks",      [],                 [[]]                ],
+    ["_params",         "404",               [createHashMap]    ]
 ];
 
-
-// hashmap
 
 private _catalog = missionNamespace getVariable ["ZRN_supplyDrop_catalog", "404"];
 
