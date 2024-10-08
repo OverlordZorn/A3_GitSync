@@ -19,7 +19,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="zrn_sqf_supplydrop";
+sourceName="~zrn_sqf_supplydrop";
 addons[]=
 {
 	"A3_Characters_F",

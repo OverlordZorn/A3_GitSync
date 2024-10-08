@@ -38,8 +38,14 @@ if (_clearBox) then {
 };
 
 // Fills the Box with anything in the array that isnt a backpack
-{	_box addItemCargoGlobal [_x # 0, _x # 1] } forEach _items;
+
+if (count _items > 0) then {
+    {	_box addItemCargoGlobal [_x # 0, _x # 1] } forEach _items;
+};
 // Fills the Box with with backpacks
-{ _box addBackpackCargoGlobal [_x # 0, _x # 1] } forEach _backpacks;
+
+if (count _backpacks > 0) then {
+    { _box addBackpackCargoGlobal [_x # 0, _x # 1] } forEach _backpacks;
+};
 
 true

@@ -20,12 +20,12 @@
 */
 
 params [
-    ["_name",           "Default",                  [""]                ],
+    ["_name",           "Default",           [""]                ],
 
-    ["_items",          [],                         [[]]                ],
-    ["_backpacks",      [],                         [[]]                ],
+    ["_items",          [],                [[]]                  ],
+    ["_backpacks",      [],                [[]]                  ],
 
-    ["_params",         "404",                      [createHashMap]     ]
+    ["_params",         "404",               [createHashMap]     ]
 
 ];
 
@@ -45,37 +45,18 @@ if (_catalog isEqualTo "404") then {
 
 if (_name in _catalog) exitWith { "SupplyDrop with this Name already exists" };
 
-private _entry = createHashMapFromArray [
+private _entry = [] call zrn_supplyDrop_fnc_defaultEntry;
 
-    ["Name",            _name],
-    ["pos_start",       [0,0,0]],
+_entry set ["Name", _name];
+_entry set ["items", _items];
+_entry set ["backpacks", _backpacks];
 
-    ["targetMode",      "MAP"],
-
-    ["pos_target",      [0,0,0]],
-
-    ["drop_alt",        50],
-    ["drop_alt_forced", true],
-    
-    ["items",           _items],
-    ["backpacks",       _backpacks],
-
-    ["class_box",       "C_supplyCrate_F"],
-    ["class_air",       "C_Heli_Light_01_civil_F"],
-    ["class_para",      "B_Parachute_02_F"],
-
-    ["side",            CIVILIAN],
-
-    ["isProtected",     false],
-    ["emptyBox",        true],
-    ["attachStrobe",   false]
-];
 
 if (_params isNotEqualTo "404") then { _entry merge [_params, true] };
 
-if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_box")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_box";};
-if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_air")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_air";};
-if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_para")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_para";};
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_box"))  exitWith {diag_log "[CVO](debug)(fn_register) Failed: undefined class_box";};
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_air"))  exitWith {diag_log "[CVO](debug)(fn_register) Failed: undefined class_air";};
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_para")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: undefined class_para";};
 
 
 _catalog set [_name, _entry];
@@ -83,3 +64,4 @@ _catalog set [_name, _entry];
 diag_log format ['[CVO](debug)(fn_register) keys _catalog: %1', keys _catalog];
 
 true
+

@@ -20,17 +20,20 @@
 
 [
     "Monkey Supply Crate",
-    ["ace_banana", 69],
-    [],
+    [
+        ["ace_banana", 69],
+        ["ace_suture", 69],
+        ["ACE_painkillers", 69]
+    ],
+    [
+        // ["somebackpackclassname", 420]
+    ],
     createHashMapFromArray [
-        ["pos_start", [10,10,10]],
-        
-        ["emptyBox", false],
+        ["pos_start",       [10,10,10]],
+        ["emptyBox",        true],
         ["targetMode",      "PLAYER"],
-
-        //["class_box", "ACE_medicalSupplyCrate_advanced"],
-        ["class_air", "B_T_VTOL_01_vehicle_F"]
-
+        ["class_box",       "ACE_medicalSupplyCrate_advanced"],
+        ["class_air",       "B_T_VTOL_01_vehicle_F"]
     ]
 ] call zrn_supplydrop_fnc_register;
 

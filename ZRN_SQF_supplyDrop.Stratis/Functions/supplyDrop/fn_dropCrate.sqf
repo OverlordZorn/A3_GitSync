@@ -82,8 +82,14 @@ _chute setPosASL _spawnPos;
 _box attachTo [_chute, [0,0,0]];
 
 
-if (_attachStrobe) then {
-    private _strobe = createVehicle ["ACE_IR_Strobe_Effect", [0,0,10], [], 0, "CAN_COLLIDE"];
+if (_entry get "attachSmoke") then {
+    private _smoke = createVehicle [_entry get "class_smoke", [0,0,10], [], 0, "CAN_COLLIDE"];
+    _smoke attachTo [attachedTo _box, [0,0,0]];
+};
+
+
+if (_entry get "attachStrobe") then {
+    private _strobe = createVehicle [_entry get "class_strobe", [0,0,10], [], 0, "CAN_COLLIDE"];
     _strobe attachTo [attachedTo _box, [0,0,32]];
     [ {	isTouchingGround _this#1 }, { deleteVehicle _this#0 }, [_strobe, _box] ] call CBA_fnc_waitUntilAndExecute;
 };

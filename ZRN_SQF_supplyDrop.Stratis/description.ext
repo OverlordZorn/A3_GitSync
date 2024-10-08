@@ -30,13 +30,14 @@ class CfgFunctions
         // tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
 		class supplyDrop
 		{
-			file = "Functions\supplyDrop";
+			//file = "Functions\supplyDrop";
 
             class example { preInit = 1; };
 
             class init { preInit = 1; };
 
             class register {};
+            class defaultEntry {};
             class createZeusInteraction {};
 
             class defineTarget {};

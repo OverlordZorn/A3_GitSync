@@ -23,9 +23,9 @@ params [
 diag_log "[CVO](debug)(fn_getPosFromMap) INIT ";
 diag_log format ['[CVO](debug)(fn_getPosFromMap) _entryName: %1', _entryName];
 
-#define MSG_designate ["<t color='#0000ff' size='1'>## supplyDrop ## <br/> Left Click to designate dropzone <br/> Alt + Left Click to abort </t>", -1, 0, 60, 1] spawn BIS_fnc_dynamicText;
-#define MSG_success  ["<t color='#00ff00' size='1'>## supplyDrop ## <br /> successful</t>", -1, 0, 5, 1] spawn BIS_fnc_dynamicText;
-#define MSG_aborted  ["<t color='#ff0000' size='1'>## supplyDrop ## <br /> aborted</t>", -1, 0, 5, 1] spawn BIS_fnc_dynamicText;
+#define MSG_designate ["<t color='#0000ff' size='1'>supplyDrop<br/>Left Click to designate dropzone<br/>Alt + Left Click to abort</t>", -1, 0, 60, 1] spawn BIS_fnc_dynamicText;
+#define MSG_success   ["<t color='#00ff00' size='1'>supplyDrop<br/>successful</t>", -1, 0, 5, 1] spawn BIS_fnc_dynamicText;
+#define MSG_aborted   ["<t color='#ff0000' size='1'>supplyDrop<br/>aborted</t>", -1, 0, 5, 1] spawn BIS_fnc_dynamicText;
 
 
 
