@@ -6,7 +6,12 @@
 * Arguments:
 *
 * Return Value:
-* None
+* 0 - <STRING>           "Monkey Supply Crate"          name of the Supplydrop
+*
+* 1 - <Nested Array>    ["ace_banana", 69]              Nested Array of Items to be filled into the crate
+* 2 - <Nested Array>    ["ace_banana", 69]              Nested Array of Backpacks to be filled into the crate
+*
+* 3 - <hashMap>         hashmap of additional parameters
 *
 * Example:
 * ['something', player] call cvo_fnc_sth
@@ -22,13 +27,6 @@ params [
 
     ["_params",         "404",                      [createHashMap]     ]
 
-//    ["_start",          [0,0,0],                    [[]],       [2,3]   ],
-//    ["_target",         "MAP",                      ["", []],   [2,3]   ],
-//    ["_side",           CIVILIAN,                   [west]              ],
-//    ["_paraClass",      "B_Parachute_02_F",         [""]                ],
-//    ["_isProtected",    false,                      [true]              ],
-//    ["_clearBox",       true,                       [true]              ],
-//    ["_attachStrobe",   false,                      [true]              ]
 ];
 
 
@@ -55,6 +53,9 @@ private _entry = createHashMapFromArray [
     ["targetMode",      "MAP"],
 
     ["pos_target",      [0,0,0]],
+
+    ["drop_alt",        50],
+    ["drop_alt_forced", true],
     
     ["items",           _items],
     ["backpacks",       _backpacks],
@@ -71,6 +72,11 @@ private _entry = createHashMapFromArray [
 ];
 
 if (_params isNotEqualTo "404") then { _entry merge [_params, true] };
+
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_box")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_box";};
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_air")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_air";};
+if !(isClass (configFile >> "Cfgvehicles" >> _entry get "class_para")) exitWith {diag_log "[CVO](debug)(fn_register) Failed: class_para";};
+
 
 _catalog set [_name, _entry];
 

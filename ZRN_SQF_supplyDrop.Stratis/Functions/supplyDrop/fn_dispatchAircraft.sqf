@@ -34,11 +34,14 @@ if !(_entryName in _catalog) exitWith  {diag_log "[CVO](debug)(fn_dispatchAircra
 private _entry = _catalog get _entryName;
 private _startPos = _entry get "pos_start";
 
-_startPos set [2, ATLToASL _startPos # 2 + 100];
+_startPos set [2, 0 max (ATLToASL _startPos # 2) + 100];
 
-// Create Aircraft and Vehicle
 
+// Create Aircraft
 private _aircraft = createVehicle [(_entry get "class_air"), [0,0,0], [], 0, "FLY"];
+
+_aircraft flyInHeight [_entry get "drop_alt", _entry get "drop_alt_forced"];
+_aircraft flyInHeightASL [25, 25, 25];
 
 private _grp = (_entry get "side") createVehicleCrew _aircraft;
 _grp addVehicle _aircraft;
@@ -68,69 +71,31 @@ _endPos = switch true do {
     default { [0,0,0] };
 };
 
-_grp AddWaypoint [_endPos, 100];
+private _wpEnd = _grp AddWaypoint [_endPos, 100];
+_wpEnd setWaypointStatements ["true", "{deleteVehicle _x} forEach [vehicle this] + thisList"];
 
 
-// Handle the Drop
-// WUAE - Drop Crate 
-// condition - Needs to return bool
-private _condition = {
-    params ["_aircraft", "_targetPos"];
-    isNull _aircraft ||
-    { damage _aircraft == 1 ||
-    { ( _aircraft distance2D _targetPos ) < 50 } }
+// PFEH - Drop Crate 
+private _pfeh_id = [{
+    params ["_args", "_handle"];
+    _args params ["_entryName", "_aircraft", "_targetPos"];
+
+    if (( _aircraft distance2D _targetPos ) > 50) exitWith {};
+    [_entryName, _aircraft] call zrn_supplydrop_fnc_dropCrate;
+    _handle call CBA_fnc_removePerFrameHandler;
+
+}, _delay, [_entryName, _aircraft, _targetPos]] call CBA_fnc_addPerFrameHandler;
+
+// Store PFEH_ID on object to retrieve during EH's
+_aircraft setVariable ["zrn_airdrop_pfeh_id", _pfeh_id];
+
+// Stops the PFEH when the object is killed or deleted
+private _cleanup = {
+    params ["_aircraft"];
+    _aircraft getVariable "zrn_airdrop_pfeh_id" call CBA_fnc_removePerFrameHandler;
+    diag_log format ['[CVO](debug)(fn_dispatchAircraft) PFEH Canceled - %1 %2', _thisEvent , _aircraft];
 };
+_aircraft addEventHandler ["Killed", _cleanup];
+_aircraft addEventHandler ["Deleted", _cleanup];
 
-// Code to be executed once condition true
-private _statement = {
-    params ["_aircraft", "_targetPos"];
-    diag_log format ['[CVO](debug)(fn_dispatchAircraft) WUAE Delete: _aircraft: %1 - _targetPos: %2', _aircraft , _targetPos];
-    if (isNull _aircraft) exitWith {};
-    if (damage _aircraft == 1) exitWith {};
-
-    [_this#0, _this#2, _this#3, _this#4, _this#5 ] call zrn_supplydrop_fnc_dropCrate;
-};
-
-[
-    _condition,
-    _statement,
-    [
-        _aircraft,
-        _targetPos,
-        _entry get "class_box",
-        _entry get "class_para",
-        [
-            _entry get "items",
-            _entry get "backpacks",
-            _entry get "emptyBox"
-        ],
-        _entry get "attachStrobe"
-    ],
-    TIMEOUT,
-    {}
-] call CBA_fnc_waitUntilAndExecute;
-
-
-/*
-// Handles  Cleanup incase the aircraft gets deleted.
-// WUAE - Delete Aircraft
-private _condition = {
-    params ["_aircraft", "_endPos"];
-    diag_log format ['[CVO](debug)(fn_dispatchAircraft) WUAE Delete: _aircraft: %1 - _endPos: %2', _aircraft , _endPos];
-    isNull _aircraft ||
-    { damage _aircraft == 1 ||
-    { (_aircraft distance2D _endPos) < 150 } }
-};
-
-// Code to be executed once condition true
-private _statement = {
-    if (isNull _this#0) exitWith {};
-    deleteVehicleCrew _this#0;
-    deleteVehicle _this#0;
-
-    diag_log "[CVO](debug)(fn_dispatchAircraft) Aircraft Deleted";
-};
-
-[_condition, _statement, [_aircraft, _endPos], TIMEOUT ,_statement] call CBA_fnc_waitUntilAndExecute;
-*/
-diag_log "[CVO](debug)(fn_dispatchAircraft) END ";
+diag_log "[CVO](debug)(fn_dispatchAircraft) END";

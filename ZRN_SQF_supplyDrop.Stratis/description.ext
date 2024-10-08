@@ -32,16 +32,15 @@ class CfgFunctions
 		{
 			file = "Functions\supplyDrop";
 
+            class example { preInit = 1; };
+
             class init { preInit = 1; };
 
             class register {};
-            
             class createZeusInteraction {};
 
             class defineTarget {};
-
             class getPosFromMap {};
-
             class dispatchAircraft {};
 
             class dropCrate {};

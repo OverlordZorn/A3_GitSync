@@ -25,20 +25,20 @@ params [
     ["_clearBox",   true,       [true]      ]
 ];
 
-if (_box isEqualTo objNull) exitWith {false};
+if (_box isEqualTo objNull) exitWith {
+    diag_log "[CVO](debug)(fn_fillCrate) Failed - box = obNull";
+};
 
 if (_clearBox) then {
     clearBackpackCargoGlobal _box;
     clearMagazineCargoGlobal _box;
     clearWeaponCargoGlobal _box;
     clearItemCargoGlobal _box;
+    
 };
-
-if (count _items + count _backpacks == 0) exitWith {true};
 
 // Fills the Box with anything in the array that isnt a backpack
 {	_box addItemCargoGlobal [_x # 0, _x # 1] } forEach _items;
-
 // Fills the Box with with backpacks
 { _box addBackpackCargoGlobal [_x # 0, _x # 1] } forEach _backpacks;
 

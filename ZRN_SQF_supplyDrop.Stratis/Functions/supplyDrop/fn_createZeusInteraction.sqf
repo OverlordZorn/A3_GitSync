@@ -92,3 +92,15 @@ private _aceAction = [
             };
 
 */
+
+
+
+/*
+            private _condition = { true };
+            
+            private _statement = {
+                params ["_target", "_player", "_params"];
+                _params params ["_entryName", "_mode"];
+                [_entryName, _mode] call zrn_supplyDrop_fnc_defineTarget;
+            };
+*/
