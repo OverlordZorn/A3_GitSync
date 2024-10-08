@@ -25,27 +25,5 @@ class Header
 
 class CfgFunctions
 {
-	class ZRN_supplyDrop
-	{
-        // tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
-		class supplyDrop
-		{
-			//file = "Functions\supplyDrop";
-
-            class example { preInit = 1; };
-
-            class init { preInit = 1; };
-
-            class register {};
-            class defaultEntry {};
-            class createZeusInteraction {};
-
-            class defineTarget {};
-            class getPosFromMap {};
-            class dispatchAircraft {};
-
-            class dropCrate {};
-			class fillCrate {};
-		};
-	};
+    #include "Functions\supplyDrop\CfgFNC_Include.hpp"
 };
