@@ -81,8 +81,8 @@ private _aceAction = [
                     [_entryName, _mode] call zrn_supplyDrop_fnc_defineTarget;
                 };
 
-                private _actionMap =    ["map", "on Map Click", "", _statement, {true}, {}, [_entryName, "PLAYER"]] call ace_interact_menu_fnc_createAction;
-                private _actionPlayer = ["player", "On Zeus Player", "", _statement, {true}, {}, [_entryName, "MAP"]] call ace_interact_menu_fnc_createAction;
+                private _actionMap =    ["MAPCLICK", "on Map Click", "", _statement, {true}, {}, [_entryName, "PLAYER"]] call ace_interact_menu_fnc_createAction;
+                private _actionPlayer = ["player", "On Zeus Player", "", _statement, {true}, {}, [_entryName, "MAPCLICK"]] call ace_interact_menu_fnc_createAction;
 
                 _actions pushBack [_actionMap, [], _target];
                 _actions pushBack [_actionPlayer, [], _target];
