@@ -35,7 +35,7 @@ if (_entry isEqualTo "404") then {
         ["drop_alt_forced", true],
 
         ["items",           ""],
-        ["backpacks",       _backpacks],
+        ["backpacks",       ""],
 
         ["class_box",       "C_supplyCrate_F"],
         ["class_air",       "C_Heli_Light_01_civil_F"],
