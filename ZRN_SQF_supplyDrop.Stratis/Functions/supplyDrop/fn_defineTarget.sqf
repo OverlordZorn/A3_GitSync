@@ -28,7 +28,7 @@ if !(_entryName in _catalog) exitWith {};
 private _entry = _catalog get _entryName;
 
 
-if (_mode == "MAP") exitWith { [_entryName] call zrn_supplyDrop_fnc_getPosFromMap; };
+if (_mode == "MAPCLICK") exitWith { [_entryName] call zrn_supplyDrop_fnc_getPosFromMap; };
 
 
 private _tgtPos = switch (_mode) do {
@@ -38,4 +38,4 @@ private _tgtPos = switch (_mode) do {
 };
 
 ["ZRN_supplyDrop_EH_dispatch", [_entryName,_tgtPos] ] call CBA_fnc_serverEvent;
-diag_log "[CVO](debug)(fn_defineTarget) ServerEvent Raised ";
+diag_log "[CVO](debug)(fn_defineTarget) ServerEvent Raised";
