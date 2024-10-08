@@ -18,7 +18,26 @@
 
 
 [
-    "Monkey Supply Crate",                                                   // Name
+    "ACE Medical Box",                                                   // Name
+    [
+        ["ace_banana", 69],
+        ["ace_suture", 69],
+        ["ACE_painkillers", 69]
+    ],                                                                       // Array of Items to be filled into - Default: [] 
+    [
+        // ["somebackpackclassname", 420]
+    ],                                                                       // Array of Backpacks to be filled into - Default: []
+    createHashMapFromArray [
+        ["pos_start",       [10,10,10]],
+        ["emptyBox",        false],
+        ["targetMode",      "MAPCLICK"],
+        ["class_box",       "ACE_medicalSupplyCrate_advanced"],
+        ["class_air",       "B_T_VTOL_01_vehicle_F"]
+    ]                                                                        // Hashmap of additional parameters that can be changed optionally
+] call zrn_supplydrop_fnc_register;
+
+[
+    "Ammo Supply Box",                                                   // Name
     [
         ["ace_banana", 69],
         ["ace_suture", 69],
@@ -31,7 +50,7 @@
         ["pos_start",       [10,10,10]],
         ["emptyBox",        true],
         ["targetMode",      "MAPCLICK"],
-        ["class_box",       "ACE_medicalSupplyCrate_advanced"],
+        //["class_box",       "ACE_medicalSupplyCrate_advanced"],
         ["class_air",       "B_T_VTOL_01_vehicle_F"]
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call zrn_supplydrop_fnc_register;
