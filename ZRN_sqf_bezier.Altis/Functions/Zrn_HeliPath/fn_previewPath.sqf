@@ -50,7 +50,7 @@ private _delay = 1;
     params ["_args", "_handle"];
     _args params ["_codeToRun", "_parameters", "_exitCode", "_condition"];
 
-    sytemChat (str systemTime);
+    // sytemChat str systemTime;
 
     if (_parameters call _condition) then {
         _parameters call _codeToRun;
