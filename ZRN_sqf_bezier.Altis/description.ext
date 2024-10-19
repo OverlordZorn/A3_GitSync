@@ -7,7 +7,7 @@ class CfgFunctions
 			file = "Functions\Zrn_HeliPath";
 			class executeLocal {};
 			class previewPath {};
-//			class testing {	postInit = 1; };
+			class testing {	postInit = 1; };
 		};
 	};
 };
