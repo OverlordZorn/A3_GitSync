@@ -1,0 +1,222 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=10;
+	class ItemIDProvider
+	{
+		nextID=13;
+	};
+	class LayerIndexProvider
+	{
+		nextID=7;
+	};
+	class Camera
+	{
+		pos[]={13678.597,64.435684,12187.61};
+		dir[]={-0.90088755,-0.42664728,-0.079836749};
+		up[]={-0.42498177,0.90441811,-0.037661932};
+		aside[]={-0.088274166,3.7252903e-09,0.99609637};
+	};
+};
+binarizationWanted=0;
+sourceName="ZRN_SQF_UBoat";
+addons[]=
+{
+	"A3_Boat_F_EPC_Submarine_01",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Boat_F_EPC";
+			name="Arma 3 Win Episode - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=10599212;
+class ScenarioData
+{
+	author="Overlord Zorn";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=6;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogBase=250;
+		forecastFogBase=250;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=2;
+		class Item0
+		{
+			dataType="Layer";
+			name="Uboat 1";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Layer";
+					name="Start";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={13483.762,-3.5079966,12129.46};
+								angles[]={6.1429305,3.5450778,5.7598829};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="uboat_after_1";
+							};
+							id=4;
+							type="Submarine_01_F";
+							atlOffset=-3.5579996;
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={13550.598,-7.1528826,12195.581};
+								angles[]={4.7441502,3.6884995,0.36911273};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="uboat_after_2";
+							};
+							id=11;
+							type="Submarine_01_F";
+							atlOffset=-7.1567106;
+						};
+					};
+					id=2;
+					atlOffset=-5.0271902;
+				};
+				class Item1
+				{
+					dataType="Layer";
+					name="After";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={13481.546,0.18787432,12128.329};
+								angles[]={0,3.5210972,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="uboat_start_1";
+							};
+							id=0;
+							type="Submarine_01_F";
+							atlOffset=0.1170001;
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={13521.608,-0.50796795,12103.959};
+								angles[]={0,3.5210972,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="uboat_start_2";
+							};
+							id=12;
+							type="Submarine_01_F";
+							atlOffset=-0.53486538;
+						};
+					};
+					id=5;
+					atlOffset=-0.18694401;
+				};
+			};
+			id=1;
+			atlOffset=-2.6234894;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13453.381,2.5598066,12074.383};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=7;
+					type="B_soldier_AR_F";
+					atlOffset=7.6293945e-06;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=6;
+			atlOffset=7.6293945e-06;
+		};
+	};
+};
