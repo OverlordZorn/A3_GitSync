@@ -22,8 +22,9 @@ class Header
 };
 */
 
+saving = 0;
 
 class CfgFunctions
 {
-    #include "CfgFnc_zrn_uboat.hpp"
+    #include "vn_ron\CfgFunctions.hpp"
 };

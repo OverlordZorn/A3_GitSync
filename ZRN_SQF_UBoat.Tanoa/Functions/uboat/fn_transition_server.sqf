@@ -37,4 +37,4 @@ if (_global_map isEqualTo false) exitWith {};
 
 private _entry = _global_map get _keyName;
 
-["zrn_uboat_transition_client", [_entry]] call CBA_fnc_globalEvent;
+["zrn_uboat_transition_client", [_entry]] call CBA_fnc_globalEventJIP;

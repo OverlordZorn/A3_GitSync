@@ -8,11 +8,11 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=13;
+		nextID=15;
 	};
 	class LayerIndexProvider
 	{
-		nextID=10;
+		nextID=13;
 	};
 	class Camera
 	{
@@ -81,7 +81,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Layer";
@@ -217,6 +217,65 @@ class Mission
 			};
 			id=6;
 			atlOffset=7.6293945e-06;
+		};
+		class Item2
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13437.419,2.5514388,12079.555};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=14;
+					type="B_Soldier_A_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=13;
 		};
 	};
 };
