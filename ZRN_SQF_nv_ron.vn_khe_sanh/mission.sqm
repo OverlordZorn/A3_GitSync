@@ -12,39 +12,31 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=16;
+		nextID=22;
 	};
 	class Camera
 	{
-		pos[]={2821.5698,551.24609,8321.3633};
-		dir[]={-0.41672614,-0.21386997,0.88351512};
-		up[]={-0.091236219,0.97686219,0.19343299};
-		aside[]={0.90444201,-7.4505806e-09,0.4265967};
+		pos[]={5142.3462,320.61063,5466.2974};
+		dir[]={-0.58272851,-0.41694382,0.69755679};
+		up[]={-0.26730818,0.90893221,0.31998202};
+		aside[]={0.76744634,0,0.64111316};
 	};
 };
 binarizationWanted=0;
 sourceName="zrn_sqf_nv_ron";
 addons[]=
 {
-	"characters_f_vietnam_c",
-	"modules_f_vietnam"
+	"characters_f_vietnam_c"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=1;
 		class Item0
 		{
 			className="characters_f_vietnam_c";
 			name="characters_f_vietnam_c";
-			author="Savage Game Design";
-			url="https://www.arma3.com";
-		};
-		class Item1
-		{
-			className="modules_f_vietnam";
-			name="modules_f_vietnam";
 			author="Savage Game Design";
 			url="https://www.arma3.com";
 		};
@@ -83,20 +75,20 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
 			side="West";
 			class Entities
 			{
-				items=1;
+				items=4;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5108.0747,307.23999,5462.6265};
+						position[]={5130.4771,305.14111,5483.542};
 					};
 					side="West";
 					flags=7;
@@ -105,6 +97,54 @@ class Mission
 						isPlayer=1;
 					};
 					id=1;
+					type="vn_b_men_sog_08";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5128.7998,305.10748,5483.873};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=17;
+					type="vn_b_men_sog_08";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5127.394,305.10172,5483.9458};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=19;
+					type="vn_b_men_sog_08";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5126.1484,305.09885,5483.9922};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=21;
 					type="vn_b_men_sog_08";
 				};
 			};
@@ -125,7 +165,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5100.7949,209.32307,5097.832};
+						position[]={5046.7378,303.75143,5354.0186};
+						angles[]={0,4.5414009,-0};
 					};
 					side="East";
 					flags=7;
@@ -141,7 +182,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5100.7949,207.26411,5092.832};
+						position[]={5052.9873,303.75607,5354.9072};
+						angles[]={0,4.5414009,-0};
 					};
 					side="East";
 					flags=5;
@@ -157,7 +199,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5100.7949,205.40897,5087.832};
+						position[]={5035.8247,303.75143,5356.1758};
+						angles[]={0,4.5414009,-0};
 					};
 					side="East";
 					flags=5;
@@ -173,7 +216,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5100.7949,203.65576,5082.832};
+						position[]={5040.7515,303.75143,5357.0269};
+						angles[]={0,4.5414009,-0};
 					};
 					side="East";
 					flags=5;
@@ -189,7 +233,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5100.7949,202.01512,5077.832};
+						position[]={5045.6787,303.75143,5357.8774};
+						angles[]={0,4.5414009,-0};
 					};
 					side="East";
 					flags=5;
@@ -205,17 +250,6 @@ class Mission
 			{
 			};
 			id=8;
-		};
-		class Item2
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={5174.085,360.48349,5672.3325};
-				angles[]={6.1506338,0,6.2805109};
-			};
-			id=15;
-			type="vn_module_situationalawarenessmodule";
 		};
 	};
 };

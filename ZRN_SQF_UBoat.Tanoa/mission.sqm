@@ -6,20 +6,24 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=10;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=15;
 	};
 	class LayerIndexProvider
 	{
-		nextID=13;
+		nextID=16;
 	};
 	class Camera
 	{
-		pos[]={13646.593,74.305557,12149.338};
-		dir[]={-0.85514462,-0.51496547,0.059596654};
-		up[]={-0.51372284,0.85720944,0.03580242};
-		aside[]={0.069523826,2.3901521e-09,0.99758697};
+		pos[]={13436.396,17.15012,12105.438};
+		dir[]={0.15149175,-0.49588558,-0.85508686};
+		up[]={0.086507767,0.86838484,-0.48828879};
+		aside[]={-0.98467982,9.6260919e-09,-0.17445102};
 	};
 };
 binarizationWanted=0;
@@ -199,7 +203,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13453.381,2.5598066,12074.383};
+						position[]={13439.103,2.5598075,12077.325};
+						angles[]={0,0.78453469,-0};
 					};
 					side="West";
 					flags=7;
@@ -209,14 +214,14 @@ class Mission
 					};
 					id=7;
 					type="B_soldier_AR_F";
-					atlOffset=7.6293945e-06;
+					atlOffset=0.0083687305;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=6;
-			atlOffset=7.6293945e-06;
+			atlOffset=0.0083687305;
 		};
 		class Item2
 		{
@@ -231,6 +236,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={13437.419,2.5514388,12079.555};
+						angles[]={0,1.154406,-0};
 					};
 					side="West";
 					flags=7;

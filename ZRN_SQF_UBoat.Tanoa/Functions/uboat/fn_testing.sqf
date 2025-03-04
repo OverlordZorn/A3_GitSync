@@ -26,7 +26,7 @@ if !(isServer) exitWith { };
         ["zrn_uboat_transition_server", [uboat_start_2]] call CBA_fnc_serverEvent;
     },
     [],
-    5
+    20
 ] call CBA_fnc_waitAndExecute;
 
 [
@@ -35,6 +35,6 @@ if !(isServer) exitWith { };
         ["zrn_uboat_transition_server", [uboat_start_1]] call CBA_fnc_serverEvent;
     },
     [],
-    15
+    30
 ] call CBA_fnc_waitAndExecute;
 
