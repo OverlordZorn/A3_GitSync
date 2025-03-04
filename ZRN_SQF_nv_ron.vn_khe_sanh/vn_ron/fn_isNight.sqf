@@ -16,5 +16,5 @@
 date call BIS_fnc_sunriseSunsetTime params ["_sunrise", "_sunset"];
 private _curr = dayTime; 
 
-_sunset < _curr  || { _curr < _sunrise }
- 
+// disable RON when its only one hour before sunrise
+_sunset < _curr  || { _curr < (_sunrise - 1) }

@@ -56,5 +56,5 @@ _delay = _delay + 1;
 [ vn_ron_fnc_gradientTimeAcc, [_accTime_prev, 15], _delay ] call CBA_fnc_waitAndExecute;
 
 // Remove the Watch
-_delay = _delay + 15 + 2;
+_delay = _delay + 15 + 4;
 [ CBA_fnc_globalEvent, [ "ron_EH_watch_display", [false] ], _delay ] call CBA_fnc_waitAndExecute;

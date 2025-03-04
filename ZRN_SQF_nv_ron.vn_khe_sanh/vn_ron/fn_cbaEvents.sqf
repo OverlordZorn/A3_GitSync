@@ -17,3 +17,6 @@
 [ "ron_EH_watch_fade", vn_ron_fnc_watch_fade ] call CBA_fnc_addEventHandler;
 
 [ "ron_EH_ron_run", vn_ron_fnc_ron_run ] call CBA_fnc_addEventHandler;
+
+[ "ron_EH_hint", vn_ron_fnc_hint ] call CBA_fnc_addEventHandler;
+
