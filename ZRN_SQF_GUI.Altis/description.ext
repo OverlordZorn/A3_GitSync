@@ -22,4 +22,5 @@ class Header
 };
 */
 
-#include "CfgFunctions.hpp"
+
+#include "RscTitles.hpp"

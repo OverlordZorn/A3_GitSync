@@ -22,4 +22,24 @@ class Header
 };
 */
 
-#include "CfgFunctions.hpp"
+
+class CfgFunctions
+{
+	class TAG
+	{
+//      tag = "TAG"; // the function will be named TAG_fnc_myOtherFunction
+		class Category
+		{
+/*			file = "My\Category\Path";
+			requiredAddons[] = { "A3_Data_F" }; // Optional requirements of CfgPatches classes. If some addons are missing, category functions will not be compiled.
+			class functionName
+                {
+                    preInit		= 1;
+                    postInit	= 1;
+                    preStart	= 1;
+                    recompile	= 1;
+    			};
+*/
+		};
+	};
+};
